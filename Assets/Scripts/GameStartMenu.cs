@@ -5,18 +5,17 @@ public class GameStartMenu : MonoBehaviour
 {
     [Header("UI Pages")]
     public GameObject mainMenu;
-    public GameObject environmentMenu;
+    public GameObject albumMenu;
     public GameObject settingMenu;
 
     [Header("Main Menu Buttons")]
-    public Button selectEnvironmentButton;
+    public Button startButton;
+    public Button albumButton;
     public Button settingButton;
     public Button exitButton;
 
-    [Header("Environment Menu Buttons")]
-    public Button homeButton;
-    public Button schoolButton;
-    public Button environmentBackButton;
+    [Header("Album Menu Buttons")]
+    public Button albumBackButton;
 
     [Header("Setting Menu")]
     public Slider soundEffectsSlider;
@@ -34,14 +33,13 @@ public class GameStartMenu : MonoBehaviour
         EnableMainMenu();
 
         // Hook up main menu buttons
-        selectEnvironmentButton.onClick.AddListener(() => { PlayClickSound(); ShowEnvironmentMenu(); });
+        startButton.onClick.AddListener(() => { PlayClickSound(); StartGame(); });
+        albumButton.onClick.AddListener(() => { PlayClickSound(); ShowAlbumMenu(); });
         settingButton.onClick.AddListener(() => { PlayClickSound(); ShowSettingMenu(); });
         exitButton.onClick.AddListener(() => { PlayClickSound(); QuitGame(); });
 
-        // Hook up environment menu buttons
-        homeButton.onClick.AddListener(() => { PlayClickSound(); SelectEnvironment(1); });
-        schoolButton.onClick.AddListener(() => { PlayClickSound(); SelectEnvironment(2); });
-        environmentBackButton.onClick.AddListener(() => { PlayClickSound(); EnableMainMenu(); });
+        // Hook up album menu buttons
+        albumBackButton.onClick.AddListener(() => { PlayClickSound(); EnableMainMenu(); });
 
         // Hook up setting menu buttons
         settingBackButton.onClick.AddListener(() => { PlayClickSound(); EnableMainMenu(); });
@@ -66,16 +64,16 @@ public class GameStartMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void SelectEnvironment(int sceneIndex)
+    public void StartGame()
     {
         HideAll();
-        SceneTransitionManager.singleton.GoToSceneAsync(sceneIndex);
+        SceneTransitionManager.singleton.GoToSceneAsync(1);
     }
 
-    public void ShowEnvironmentMenu()
+    public void ShowAlbumMenu()
     {
         HideAll();
-        environmentMenu.SetActive(true);
+        albumMenu.SetActive(true);
     }
 
     public void ShowSettingMenu()
@@ -87,7 +85,7 @@ public class GameStartMenu : MonoBehaviour
     public void HideAll()
     {
         mainMenu.SetActive(false);
-        environmentMenu.SetActive(false);
+        albumMenu.SetActive(false);
         settingMenu.SetActive(false);
     }
 
