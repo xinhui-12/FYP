@@ -1,0 +1,54 @@
+{
+    "name": "Custom Input Actions",
+    "maps": [
+        {
+            "name": "Menu",
+            "id": "997ffb1a-331f-414d-ac3d-d95411ab7206",
+            "actions": [
+                {
+                    "name": "pauseMenuPress",
+                    "type": "Button",
+                    "id": "4975e20d-ae5c-411f-95c2-fc2b3268b4a7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "InventoryMenuPress",
+                    "type": "Button",
+                    "id": "ac7e5a0a-99b8-498c-b7a7-f08e4b92f1c7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4df691b2-3460-42d2-9307-de9c6b7f7b43",
+                    "path": "<OculusTouchController>/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "pauseMenuPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c8b69d64-31fe-448c-95e9-114d49ac21a3",
+                    "path": "<OculusTouchController>{RightHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "InventoryMenuPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

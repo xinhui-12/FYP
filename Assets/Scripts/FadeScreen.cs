@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class FadeScreen : MonoBehaviour
 {
-    public bool fadeOnStart = true;
-    public float fadeDuration = 1.5f;
+    public bool fadeOnStart = false;
+    public float fadeDuration = 1f;
     public Color fadeColor;
     public AnimationCurve fadeCurve;
     public string colorPropertyName = "_Color";
