@@ -3085,14 +3085,13 @@ MonoBehaviour:
   setting: {fileID: 0}
   currentSettingIndex: 0
   gridScale: {x: 0, y: 0, z: 0}
-  mapCanvas: {fileID: 0}
-  mapRawImage: {fileID: 0}
   mapCamera: {fileID: 0}
   startPosition: {x: 0, y: 0, z: 0}
   endPosition: {x: 0, y: 0, z: 0}
   randomPosition: {x: 0, y: 0, z: 0}
   destroyedWallPosition: {x: 0, y: 0, z: 0}
   transparentMaterial: {fileID: 2100000, guid: 7ffbb0ed1a3361b439530e1f834a2ff5, type: 2}
+  UIObjectInteraction: {fileID: 0}
 --- !u!4 &746430232
 Transform:
   m_ObjectHideFlags: 0
@@ -4605,7 +4604,7 @@ GameObject:
   - component: {fileID: 1028540742}
   m_Layer: 2
   m_Name: XR Origin
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5841,7 +5840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maze: {fileID: 746430231}
-  player: {fileID: 2088099850}
+  player: {fileID: 1028540729}
 --- !u!1 &1305476109 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5686134208185362930, guid: 1fd3a7c43c8190f4d8c167ebde694364,
