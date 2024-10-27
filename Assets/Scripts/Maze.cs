@@ -1,9 +1,6 @@
 
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class Maze : MonoBehaviour
 {
@@ -21,10 +18,6 @@ public class Maze : MonoBehaviour
     public List<GameObject>[,] gridWallList;
 
     [HideInInspector]
-    public GameObject mapCanvas;
-    [HideInInspector]
-    public GameObject mapRawImage;
-    [HideInInspector]
     public Camera mapCamera;
 
     [HideInInspector]
@@ -37,6 +30,7 @@ public class Maze : MonoBehaviour
     public Vector3 destroyedWallPosition;
 
     public Material transparentMaterial;
+    public UIObjectInteraction UIObjectInteraction;
 
     void Start()
     {
@@ -58,11 +52,10 @@ public class Maze : MonoBehaviour
         CreateGrid();
         GeneratePrimMaze();
         SetupUpStartingPointAndEndingPoint();
-        //SetupMap();
-        //mapCanvas.SetActive(setting.map);
         SetupCamera();
     }
 
+    // To get any position in the maze
     public Vector3 GetRandomValidPosition()
     {
         int randomRow = Random.Range(0, setting.row);
@@ -99,15 +92,10 @@ public class Maze : MonoBehaviour
         {
             Destroy(floor);
         }
-        if (mapCanvas != null)
-        {
-            //Destroy(mapCanvas);
-        }
         if (mapCamera != null)
         {
             Destroy(mapCamera.gameObject);
         }
-        //mapCanvas = null;
         mapCamera = null;
 
     }
@@ -317,21 +305,21 @@ public class Maze : MonoBehaviour
         {
             case MazeSetting.WallFrom.Up:
                 end.y = setting.endingIndex - 1;
-                InvisbleWall(end, 0);
+                InvisbleEndWall(end, 0);
                 break;
             case MazeSetting.WallFrom.Down:
                 end.x = setting.row - 1;
                 end.y = setting.endingIndex - 1;
-                InvisbleWall(end, 2);
+                InvisbleEndWall(end, 2);
                 break;
             case MazeSetting.WallFrom.Left:
                 end.x = setting.endingIndex - 1;
-                InvisbleWall(end, 3);
+                InvisbleEndWall(end, 3);
                 break;
             case MazeSetting.WallFrom.Right:
                 end.x = setting.endingIndex - 1;
                 end.y = setting.column - 1;
-                InvisbleWall(end, 1);
+                InvisbleEndWall(end, 1);
                 break;
         }
         setting.startingPoint = start;
@@ -358,64 +346,17 @@ public class Maze : MonoBehaviour
 
     void InvisbleWall(Vector2Int grid, int side)
     {
-        GameObject wallDestroy;
-        wallDestroy = gridWallList[grid.x, grid.y][side];
-        wallDestroy.GetComponent<Renderer>().material = transparentMaterial;
+        GameObject invisbleWall;
+        invisbleWall = gridWallList[grid.x, grid.y][side];
+        invisbleWall.GetComponent<Renderer>().material = transparentMaterial;
     }
-
-    private void SetupMap()
+    void InvisbleEndWall(Vector2Int grid, int side)
     {
-        // Create a new GameObject for the map canvas
-        mapCanvas = new GameObject("MapCanvas");
-        mapCanvas.transform.parent = transform;
-
-        // Add a Canvas component to the map canvas GameObject
-        Canvas canvas = mapCanvas.AddComponent<Canvas>();
-        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-        canvas.AddComponent<CanvasScaler>();
-        canvas.GetComponent<CanvasScaler>().uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
-        canvas.GetComponent<CanvasScaler>().referenceResolution = new Vector2(800, 600);
-        canvas.GetComponent<CanvasScaler>().matchWidthOrHeight = 0.5f;
-
-        // Add a RawImage component to the map canvas GameObject
-        mapRawImage = new GameObject("MapRawImage");
-        mapRawImage.AddComponent<RawImage>();
-        mapRawImage.transform.SetParent(mapCanvas.transform);
-
-
-        // Set the position and size of the RawImage
-        RectTransform mapRectTransform = mapRawImage.GetComponent<RawImage>().rectTransform;
-        mapRectTransform.sizeDelta = new Vector2(setting.mapWidth, setting.mapHeight); // Set map size
-
-        Vector2 pos = Vector2.zero;
-        switch (setting.mapPosition)
-        {
-            case MazeSetting.MapPosition.TopLeft:
-                pos = Vector2.up;
-                break;
-            case MazeSetting.MapPosition.TopRight:
-                pos = Vector2.one;
-                break;
-            case MazeSetting.MapPosition.BottomLeft:
-                pos = Vector2.zero;
-                break;
-            case MazeSetting.MapPosition.BottomRight:
-                pos = Vector2.right;
-                break;
-            default:
-                break;
-        }
-
-        mapRectTransform.anchorMin = pos;
-        mapRectTransform.anchorMax = pos;
-        mapRectTransform.pivot = pos;
-        mapRectTransform.anchoredPosition = pos;
-
-        SetupCamera();
-
-        // Set the mapRenderTexture as the texture for the RawImage
-        mapRawImage.GetComponent<RawImage>().texture = setting.mapRender;
-
+        GameObject endWall;
+        endWall = gridWallList[grid.x, grid.y][side];
+        endWall.GetComponent<Renderer>().material = transparentMaterial;
+        endWall.GetComponent<BoxCollider>().isTrigger = true;
+        endWall.name = "EndWall";
     }
 
     private void SetupCamera()
