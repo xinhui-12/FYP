@@ -15,7 +15,7 @@ public class MazeEndTrigger : MonoBehaviour
         if (other.gameObject == uiObjectInteraction.player)
         {
             Debug.Log("Player reached the end position!");
-            uiObjectInteraction.resetPlayerPosition();
+            uiObjectInteraction.ResetPlayerPosition();
         }
     }
 }

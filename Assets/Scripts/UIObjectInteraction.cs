@@ -1,4 +1,6 @@
 
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -7,6 +9,7 @@ public class UIObjectInteraction : MonoBehaviour
     public Maze maze;
     public GameObject player;
     private Vector3 lastInteractionPosition;
+    public GameObject number;
 
     void Start()
     {
@@ -17,16 +20,20 @@ public class UIObjectInteraction : MonoBehaviour
         }
     }
 
-    public void onMazeImageClicked(SelectEnterEventArgs args)
+    public void OnMazeImageClicked(SelectEnterEventArgs args)
     {
-        Debug.Log("MazeImage clicked!");
-        lastInteractionPosition = player.transform.position;
-        player.transform.position = maze.endPosition;
+        if (!PauseMenu.pause)
+        {
+            
+            lastInteractionPosition = player.transform.position;
+            player.transform.position = maze.startPosition;
+        }
+            
     }
 
-    public void resetPlayerPosition()
+    public void ResetPlayerPosition()
     {
-        Debug.Log("Returning to last interacted position.");
         player.transform.position = lastInteractionPosition;
+        number.SetActive(true);
     }
 }

@@ -4,13 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.XR.Interaction.Toolkit;
 
 
 public class PauseMenu : MonoBehaviour
 {
-    public bool activePauseMenuUI = true;    
+    public bool activePauseMenuUI = true;
 
     [Header("UI Pages")]
+    public GameObject gameMenu;
     public GameObject pauseMenuUI;
     public GameObject albumMenu;
     public GameObject settingMenu;
@@ -33,6 +35,9 @@ public class PauseMenu : MonoBehaviour
     public AudioSource soundEffectsSource;
     public AudioSource musicSource;
     public List<Light> environmentLights;
+
+    public static bool pause = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -77,6 +82,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (activePauseMenuUI)
         {
+            pause = false;
             HideAll();
             pauseMenuUI.SetActive(false);
             activePauseMenuUI = false;
@@ -89,9 +95,10 @@ public class PauseMenu : MonoBehaviour
             // Position the pause menu in front of the user
             Vector3 cameraPosition = Camera.main.transform.position;
             Vector3 cameraForward = Camera.main.transform.forward;
-            pauseMenuUI.transform.position = cameraPosition + cameraForward * 2.0f; // Adjust the distance as needed
-            pauseMenuUI.transform.rotation = Quaternion.LookRotation(cameraForward);
+            gameMenu.transform.position = cameraPosition + cameraForward * 2.0f; // Adjust the distance as needed
+            gameMenu.transform.rotation = Quaternion.LookRotation(cameraForward);
 
+            pause = true;
             HideAll();
             pauseMenuUI.SetActive(true);
             activePauseMenuUI = true;
@@ -150,10 +157,8 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
-        pauseMenuUI.SetActive(false);
-        activePauseMenuUI = false;
-        Time.timeScale = 1.0f;
-
+        activePauseMenuUI = true;
+        DisplayPauseMenuUI();
     }
 
     public void ExitGame()
