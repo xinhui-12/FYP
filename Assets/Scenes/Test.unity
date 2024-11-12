@@ -2782,6 +2782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activePauseMenuUI: 1
+  gameMenu: {fileID: 0}
   pauseMenuUI: {fileID: 319791858}
   albumMenu: {fileID: 1389903884}
   settingMenu: {fileID: 1533382426}
@@ -3665,6 +3666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activePauseMenuUI: 0
+  gameMenu: {fileID: 0}
   pauseMenuUI: {fileID: 319791858}
   albumMenu: {fileID: 1389903884}
   settingMenu: {fileID: 1533382426}

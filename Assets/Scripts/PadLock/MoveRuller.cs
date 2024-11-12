@@ -91,7 +91,6 @@ public class MoveRuller : MonoBehaviour
         if (newValue != _numberArray[index])
         {
             _numberArray[index] = newValue;
-            Debug.Log($"Ruler {index} changed to: {newValue}");
         }
     }
 }

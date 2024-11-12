@@ -1,9 +1,7 @@
 
 using UnityEngine;
-using UnityEngine.UIElements;
 using TMPro;
 using UnityEngine.SceneManagement;
-using Unity.VisualScripting;
 
 public class BombDifuseLogic : MonoBehaviour
 {
@@ -25,7 +23,7 @@ public class BombDifuseLogic : MonoBehaviour
     private int stage2Index;
     private bool explode = false;
     [HideInInspector]
-    public static bool defuse { get; private set; } = false;
+    public static bool Defuse { get; private set; } = false;
 
     public void Start()
     {
@@ -64,7 +62,7 @@ public class BombDifuseLogic : MonoBehaviour
 
     public void Update()
     {
-        if (defuse) return;
+        if (Defuse) return;
 
         if (countdownTimer.timesOut)
         {
@@ -122,7 +120,7 @@ public class BombDifuseLogic : MonoBehaviour
                 isCorrect = Stage3(triggerIndex);
                 if (isCorrect)
                 {
-                    defuse = true;
+                    Defuse = true;
                     HandleDefuse();
                     return;
                 }

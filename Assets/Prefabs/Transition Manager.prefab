@@ -44,5 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b29c9ee5eccc9a42a33231645d21941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeScreen: {fileID: 3127377416852887304, guid: e367714f162349d48a5cb6f00133e149,
-    type: 3}
+  fadeScreen: {fileID: 0}

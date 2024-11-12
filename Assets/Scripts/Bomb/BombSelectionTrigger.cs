@@ -9,7 +9,7 @@ public class BombSelectionTrigger : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (BombDifuseLogic.defuse) return;
+        if (BombDifuseLogic.Defuse) return;
         if (other.CompareTag("Hand"))
         {
             OnColliderTriggered?.Invoke(GetComponent<Collider>());

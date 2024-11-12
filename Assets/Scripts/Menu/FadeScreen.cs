@@ -1,5 +1,5 @@
+
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FadeScreen : MonoBehaviour
@@ -10,6 +10,8 @@ public class FadeScreen : MonoBehaviour
     public AnimationCurve fadeCurve;
     public string colorPropertyName = "_Color";
     private Renderer rend;
+    public delegate void FadeComplete();
+    public event FadeComplete OnFadeaOutComplete;
 
     // Start is called before the first frame update
     void Start()
@@ -58,5 +60,7 @@ public class FadeScreen : MonoBehaviour
 
         if(alphaOut == 0)
             rend.enabled = false;
+
+        OnFadeaOutComplete?.Invoke();
     }
 }

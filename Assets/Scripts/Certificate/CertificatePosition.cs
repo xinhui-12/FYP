@@ -1,15 +1,12 @@
 
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class CertificatePosition : MonoBehaviour
 {
     public RectTransform[] objects;
     public RectTransform[] snapPoints;
     public Dictionary<RectTransform, RectTransform> snapPointOccupancy = new();
-    //private readonly float overlapThreshold = 0.1f;
 
     void Start()
     {
@@ -25,9 +22,7 @@ public class CertificatePosition : MonoBehaviour
         for (int i = 0; i < positions.Length; i++)
         {
             int randomIndex = Random.Range(i, objects.Length);
-            Vector3 temp = positions[i];
-            positions[i] = positions[randomIndex];
-            positions[randomIndex] = temp;
+            (positions[randomIndex], positions[i]) = (positions[i], positions[randomIndex]);
         }
 
         for (int i = 0; i < objects.Length; i++)
@@ -47,7 +42,7 @@ public class CertificatePosition : MonoBehaviour
         foreach (var snapPoint in snapPoints)
         {
             foreach (var obj in objects)
-            {
+            { 
                 if (snapPoint.position == obj.position)
                 {
                     snapPointOccupancy[snapPoint] = obj;
@@ -55,7 +50,7 @@ public class CertificatePosition : MonoBehaviour
                 }
             }
         }
-
+        
         /*
         foreach (var entry in snapPointOccupancy)
         {
