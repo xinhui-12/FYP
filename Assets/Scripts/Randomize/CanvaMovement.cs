@@ -1,29 +1,37 @@
+
 using UnityEngine;
 
 public class CanvaMovement : MonoBehaviour
 {
-    public float moveSpeed = 1f; // Speed of the movement
+    public float moveSpeed = 1f;
+    [HideInInspector]
+    public float maxSpeed;
 
     public float xMin = -1f;
     public float xMax = 1f;
     public float yMin = -1f;
     public float yMax = 1f;
 
-    private RectTransform rectTransform;
+    [Header("Script")]
+    public RulerSlash rulerSlash;
+    public WordCheck wordCheck;
+
+    [HideInInspector]
+    public RectTransform rectTransform;
     private Vector2 targetPosition;
-    private Vector2 originalPosition;
 
     void Start()
     {
-        // Get the RectTransform component
+        maxSpeed = moveSpeed;
         rectTransform = GetComponent<RectTransform>();
-        originalPosition = rectTransform.anchoredPosition;
-        // Set an initial random target position
         SetRandomTargetPosition();
     }
 
     void Update()
     {
+        moveSpeed = maxSpeed * (1 - Mathf.Clamp01((float)rulerSlash.slashTime / wordCheck.word.Length));
+        if (moveSpeed == 0) return;
+
         // Move the UI element towards the target position
         rectTransform.anchoredPosition = Vector2.MoveTowards(
             rectTransform.anchoredPosition,

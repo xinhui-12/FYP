@@ -16,6 +16,9 @@ public class ButtonInteractable : MonoBehaviour
     public bool correctButton;
     public GameObject alarmClock;
 
+    [Header("Game Scene 3")]
+    public GameObject sceneHint;
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Hand"))
@@ -24,7 +27,7 @@ public class ButtonInteractable : MonoBehaviour
             switch (gameScene)
             {
                 case 1:
-                    StartCoroutine(ActivateHint());
+                    StartCoroutine(ActivateMathHint());
                     break;
                 case 2:
                     if (correctButton)
@@ -35,9 +38,9 @@ public class ButtonInteractable : MonoBehaviour
                     {
                         StartCoroutine(AlarmClockSound());
                     }
-
                     break;
                 case 3:
+                    StartCoroutine(ActivateSceneHint());
                     break; 
                 default:
                     Debug.Log("No function");
@@ -47,7 +50,7 @@ public class ButtonInteractable : MonoBehaviour
         }
     }
 
-    private IEnumerator ActivateHint()
+    private IEnumerator ActivateMathHint()
     {
         // Wait until the animation state "ButtonPress" is finished
         AnimatorStateInfo stateInfo = btnAnimation.GetCurrentAnimatorStateInfo(0);
@@ -92,6 +95,19 @@ public class ButtonInteractable : MonoBehaviour
             alarmClock.GetComponentInChildren<Animator>().SetTrigger("Ring");
         }
     }
+
+    private IEnumerator ActivateSceneHint()
+    {
+        // Wait until the animation state "ButtonPress" is finished
+        AnimatorStateInfo stateInfo = btnAnimation.GetCurrentAnimatorStateInfo(0);
+        while (stateInfo.IsName("ButtonPress") && stateInfo.normalizedTime < 1.0f)
+        {
+            yield return null;
+            stateInfo = btnAnimation.GetCurrentAnimatorStateInfo(0);
+        }
+
+        sceneHint.SetActive(true);
+    }
 }
 
 #if UNITY_EDITOR
@@ -120,6 +136,10 @@ public class ConditionalVariablesEditor : Editor
             {
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("alarmClock"));
             }
+        }
+        else if (script.gameScene == 3)
+        {
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("sceneHint"));
         }
 
         // Apply changes
