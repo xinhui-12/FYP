@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
 
 public class PadLockPassword : MonoBehaviour
 {
