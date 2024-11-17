@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class Maze : MonoBehaviour
 {
     public static Maze Instance { get; private set; }
@@ -30,7 +31,6 @@ public class Maze : MonoBehaviour
     public Vector3 destroyedWallPosition;
 
     public Material transparentMaterial;
-    public UIObjectInteraction UIObjectInteraction;
 
     void Start()
     {
@@ -45,6 +45,12 @@ public class Maze : MonoBehaviour
 
     public void GenerateMaze()
     {
+        GameObject existingFloor = GameObject.Find("MazeFloor");
+        if(existingFloor != null)
+        {
+            Debug.Log("Maze already exists. Skipping regeneration.");
+            return;
+        }
         ResetMaze();
         Random.InitState(setting.seed);
         gridList = new Vector3[setting.row, setting.column];
@@ -341,6 +347,7 @@ public class Maze : MonoBehaviour
         GameObject wallDestroy;
         wallDestroy = gridWallList[grid.x, grid.y][side];
         gridWallList[grid.x, grid.y][side] = null;
+        wallDestroy.SetActive(false);
         Destroy(wallDestroy);
     }
 

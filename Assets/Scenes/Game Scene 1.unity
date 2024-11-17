@@ -6896,16 +6896,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settingArray:
   - {fileID: 11400000, guid: db78c31a3bef20b4f953ef1e2f9dfa60, type: 2}
-  setting: {fileID: 0}
+  setting: {fileID: 11400000, guid: db78c31a3bef20b4f953ef1e2f9dfa60, type: 2}
   currentSettingIndex: 0
-  gridScale: {x: 0, y: 0, z: 0}
+  gridScale: {x: 2, y: 1, z: 2}
   mapCamera: {fileID: 0}
-  startPosition: {x: 0, y: 0, z: 0}
-  endPosition: {x: 0, y: 0, z: 0}
+  startPosition: {x: -10.251171, y: 1.7426882, z: -34.23}
+  endPosition: {x: 7.748829, y: 1.7426882, z: -16.23}
   randomPosition: {x: 0, y: 0, z: 0}
-  destroyedWallPosition: {x: 0, y: 0, z: 0}
+  destroyedWallPosition: {x: -10, y: 2.1, z: -9}
   transparentMaterial: {fileID: 2100000, guid: 7ffbb0ed1a3361b439530e1f834a2ff5, type: 2}
-  UIObjectInteraction: {fileID: 0}
 --- !u!4 &746430232
 Transform:
   m_ObjectHideFlags: 0
@@ -8970,10 +8969,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5686134208185362930, guid: 1fd3a7c43c8190f4d8c167ebde694364,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1305476111}
     - targetCorrespondingSourceObject: {fileID: 5686134208185362930, guid: 1fd3a7c43c8190f4d8c167ebde694364,
         type: 3}
       insertIndex: -1
@@ -14622,30 +14617,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 892314394}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1305476111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1305476109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b43bbb95998ee404f86c0ac07590b0e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pinchAnimationAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Pinch Animation
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 17e805ca-39e0-49e6-bfe0-c4d893ca3e89
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
 --- !u!64 &1305476113
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14681,29 +14652,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerAction:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
-      m_Name: 
+      m_Name: Trigger
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 32ec27c7-042b-46ac-89fe-30e375af3308
+      m_Id: 92715373-fb8b-41c8-8083-f3b295857549
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
   gripAction:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
-      m_Name: 
+      m_Name: Grip
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: ad0db46d-90d5-4dc8-918a-b481f914e239
+      m_Id: 455f5fa2-32b1-4448-a26e-5ca0afd38082
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!1 &1324767124
 GameObject:
   m_ObjectHideFlags: 0
@@ -17764,29 +17737,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerAction:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
-      m_Name: 
+      m_Name: Trigger
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 6d98e49d-bad0-44ae-b4a2-954dd949d76d
+      m_Id: 92715373-fb8b-41c8-8083-f3b295857549
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: -4289430672226363583, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
   gripAction:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
-      m_Name: 
+      m_Name: Grip
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: ba5a85d1-f6df-41e6-84fd-37b597b612dc
+      m_Id: 455f5fa2-32b1-4448-a26e-5ca0afd38082
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!1 &1468181803 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3695927051134792217, guid: a7494a27df17c3c4aa431a91b65b3dbe,
