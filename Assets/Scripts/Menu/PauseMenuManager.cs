@@ -66,6 +66,7 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseButtonPressed(InputAction.CallbackContext context)
     {
+        Debug.Log(context.ToString());
         if (context.performed)
             DisplayPauseMenuUI();
 

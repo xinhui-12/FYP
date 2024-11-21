@@ -1,5 +1,6 @@
 
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -10,10 +11,10 @@ public class OpenBook : MonoBehaviour
     public GameObject leftHand;
     public GameObject rightHand;
     public GameObject bookCanva;
+    public Transform targetPosition;
+    public float moveSpeed = 1f;
 
     private bool isHeld = false;
-    [HideInInspector]
-    public bool isBookOpen = false;
 
     private void Awake()
     {
@@ -21,29 +22,34 @@ public class OpenBook : MonoBehaviour
             grabInteractable = GetComponent<XRGrabInteractable>();
 
         grabInteractable.selectEntered.AddListener(OnSelectEntered);
-        grabInteractable.selectExited.AddListener(OnSelectExited);
+        //grabInteractable.selectExited.AddListener(OnSelectExited);
     }
 
     private void OnDestroy()
     {
         grabInteractable.selectEntered.RemoveListener(OnSelectEntered);
-        grabInteractable.selectExited.RemoveListener(OnSelectExited);
+        //grabInteractable.selectExited.RemoveListener(OnSelectExited);
+    }
+
+    private void Start()
+    {
+        bookCanva?.SetActive(false);
     }
 
     private void OnSelectEntered(SelectEnterEventArgs args)
     {
-        transform.rotation = Quaternion.Euler(90, 90, 0);
+        
         GameObject handObj = args.interactorObject.transform.parent.gameObject;
 
         if (handObj == rightHand)
         {
+            transform.rotation = Quaternion.Euler(90, 90, 0);
             isHeld = true;
+            bookAnimator.SetBool("isOpen", false);
         }
         else if (handObj == leftHand && isHeld)
         {
-            isBookOpen = true;
-            bookAnimator.SetBool("isOpen", isBookOpen);
-            StartCoroutine(EnableCanva());
+            StartCoroutine(FlyAndOpenCoroutine());
         }
         else
         {
@@ -53,24 +59,48 @@ public class OpenBook : MonoBehaviour
         }
     }
 
-    private void OnSelectExited(SelectExitEventArgs args)
+    IEnumerator FlyAndOpenCoroutine()
     {
-        if (args.interactorObject.transform.gameObject == rightHand)
-            isHeld = false;
-        isBookOpen = false;
-        bookAnimator.SetBool("isOpen", isBookOpen);
-        bookCanva.SetActive(false);
-    }
+        grabInteractable.enabled = false;
 
-    IEnumerator EnableCanva()
-    {
-        AnimatorStateInfo stateInfo = bookAnimator.GetCurrentAnimatorStateInfo(0);
-        if (stateInfo.IsName("Idle")) yield return null;
-        while (stateInfo.IsName("OpenBook") && stateInfo.normalizedTime < 1.0f)
+        while (Vector3.Distance(transform.position, targetPosition.position) > 0.1f)
         {
+            transform.SetPositionAndRotation(Vector3.MoveTowards(transform.position, targetPosition.position, moveSpeed * Time.deltaTime), Quaternion.RotateTowards(transform.rotation, targetPosition.rotation, moveSpeed * 50f * Time.deltaTime));
             yield return null;
         }
-        bookCanva.SetActive(true);
+
+        transform.SetPositionAndRotation(targetPosition.position, targetPosition.rotation);
+
+        bookAnimator?.SetBool("isOpen", true);
+
+        // Wait until the "OpenBook" animation state starts
+        while (true)
+        {
+            AnimatorStateInfo stateInfo = bookAnimator.GetCurrentAnimatorStateInfo(0);
+
+            // Check if the Animator has entered the "OpenBook" state
+            if (stateInfo.IsName("OpenBook"))
+                break;
+
+            yield return null; // Wait until the state changes
+        }
+
+        // Wait until the animation finishes
+        while (true)
+        {
+            AnimatorStateInfo stateInfo = bookAnimator.GetCurrentAnimatorStateInfo(0);
+
+            // Check if the animation is still playing 
+            if (stateInfo.IsName("OpenBook") && stateInfo.normalizedTime >= 1.0f)
+                break;
+
+            yield return null; // Wait for the animation to complete
+        }
+
+        bookCanva?.SetActive(true);
+
+        Invoke(nameof(ReenableGrabInteractable), 0.1f);
+        isHeld = false;
     }
 
     private void ReenableGrabInteractable()

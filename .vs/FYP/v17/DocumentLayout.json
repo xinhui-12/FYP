@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Xin Hui\\FYP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|c:\\users\\xin hui\\fyp\\assets\\scripts\\randomize\\rulerslash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\randomize\\rulerslash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|c:\\users\\xin hui\\fyp\\assets\\scripts\\openbook\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\openbook\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|C:\\Users\\Xin Hui\\FYP\\assets\\scripts\\maze\\maze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\maze\\maze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|C:\\Users\\Xin Hui\\FYP\\assets\\scripts\\openbook\\openbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\openbook\\openbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|C:\\Users\\Xin Hui\\FYP\\assets\\scripts\\button\\buttoninteractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\button\\buttoninteractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|C:\\Users\\Xin Hui\\FYP\\assets\\scripts\\maze\\maze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\maze\\maze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|C:\\Users\\Xin Hui\\FYP\\assets\\scripts\\randomize\\rulerslash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\randomize\\rulerslash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,39 +35,64 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\OpenBook\\Book.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\OpenBook\\Book.cs",
+              "ToolTip": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\OpenBook\\Book.cs",
+              "RelativeToolTip": "Assets\\Scripts\\OpenBook\\Book.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIcBAAB1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T16:25:10.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OpenBook.cs",
+              "DocumentMoniker": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\OpenBook\\OpenBook.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\OpenBook\\OpenBook.cs",
+              "ToolTip": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\OpenBook\\OpenBook.cs",
+              "RelativeToolTip": "Assets\\Scripts\\OpenBook\\OpenBook.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAGYAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T02:44:35.089Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "RulerSlash.cs",
               "DocumentMoniker": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Randomize\\RulerSlash.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Randomize\\RulerSlash.cs",
               "ToolTip": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Randomize\\RulerSlash.cs",
               "RelativeToolTip": "Assets\\Scripts\\Randomize\\RulerSlash.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwCoAAABFAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAYwAcAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T07:43:34.016Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T07:43:34.016Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ButtonInteractable.cs",
               "DocumentMoniker": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Button\\ButtonInteractable.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Button\\ButtonInteractable.cs",
               "ToolTip": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Button\\ButtonInteractable.cs",
               "RelativeToolTip": "Assets\\Scripts\\Button\\ButtonInteractable.cs",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAowAgAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAQwDcAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-17T10:19:30.713Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Maze.cs",
               "DocumentMoniker": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Maze\\Maze.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Maze\\Maze.cs",
               "ToolTip": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Maze\\Maze.cs",
               "RelativeToolTip": "Assets\\Scripts\\Maze\\Maze.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAQwDMAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAADMAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T14:45:43.271Z"
+              "WhenOpened": "2024-11-16T14:45:43.271Z",
+              "EditorCaption": ""
             }
           ]
         }
