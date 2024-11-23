@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Xin Hui\\FYP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|c:\\users\\xin hui\\fyp\\assets\\scripts\\openbook\\flipright.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\openbook\\flipright.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|c:\\users\\xin hui\\fyp\\assets\\scripts\\openbook\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\openbook\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|C:\\Users\\Xin Hui\\FYP\\assets\\scripts\\menu\\pausemenumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menu\\pausemenumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|C:\\Users\\Xin Hui\\FYP\\assets\\scripts\\maze\\maze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\maze\\maze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|C:\\Users\\Xin Hui\\FYP\\assets\\scripts\\openbook\\openbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,18 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|C:\\Users\\Xin Hui\\FYP\\assets\\scripts\\randomize\\rulerslash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\randomize\\rulerslash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|C:\\Users\\Xin Hui\\FYP\\assets\\scripts\\maze\\maze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\maze\\maze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Xin Hui\\FYP\\assets\\book-page curl\\scripts\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\book-page curl\\scripts\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Xin Hui\\FYP\\assets\\book-page curl\\scripts\\autoflip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\book-page curl\\scripts\\autoflip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,51 +35,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FlipRight.cs",
-              "DocumentMoniker": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\OpenBook\\FlipRight.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\OpenBook\\FlipRight.cs",
-              "ToolTip": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\OpenBook\\FlipRight.cs",
-              "RelativeToolTip": "Assets\\Scripts\\OpenBook\\FlipRight.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T16:07:41.205Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "Book.cs",
-              "DocumentMoniker": "C:\\Users\\Xin Hui\\FYP\\Assets\\Book-Page Curl\\scripts\\Book.cs",
-              "RelativeDocumentMoniker": "Assets\\Book-Page Curl\\scripts\\Book.cs",
-              "ToolTip": "C:\\Users\\Xin Hui\\FYP\\Assets\\Book-Page Curl\\scripts\\Book.cs",
-              "RelativeToolTip": "Assets\\Book-Page Curl\\scripts\\Book.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAswGIAAAAFAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\OpenBook\\Book.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\OpenBook\\Book.cs",
+              "ToolTip": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\OpenBook\\Book.cs",
+              "RelativeToolTip": "Assets\\Scripts\\OpenBook\\Book.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIcBAAB1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T10:27:28.965Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PauseMenuManager.cs",
-              "DocumentMoniker": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Menu\\PauseMenuManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Menu\\PauseMenuManager.cs",
-              "ToolTip": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Menu\\PauseMenuManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Menu\\PauseMenuManager.cs",
-              "ViewState": "AgIAAGUAAAAAAAAAAAAwwCwAAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T05:53:31.853Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AutoFlip.cs",
-              "DocumentMoniker": "C:\\Users\\Xin Hui\\FYP\\Assets\\Book-Page Curl\\scripts\\AutoFlip.cs",
-              "RelativeDocumentMoniker": "Assets\\Book-Page Curl\\scripts\\AutoFlip.cs",
-              "ToolTip": "C:\\Users\\Xin Hui\\FYP\\Assets\\Book-Page Curl\\scripts\\AutoFlip.cs",
-              "RelativeToolTip": "Assets\\Book-Page Curl\\scripts\\AutoFlip.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAzwBMAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T03:19:28.885Z"
+              "WhenOpened": "2024-11-21T16:25:10.533Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -131,15 +83,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Maze.cs",
               "DocumentMoniker": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Maze\\Maze.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Maze\\Maze.cs",
               "ToolTip": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Maze\\Maze.cs",
               "RelativeToolTip": "Assets\\Scripts\\Maze\\Maze.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAQwDMAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAADMAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T14:45:43.271Z"
+              "WhenOpened": "2024-11-16T14:45:43.271Z",
+              "EditorCaption": ""
             }
           ]
         }

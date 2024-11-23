@@ -19,6 +19,13 @@ public class ButtonInteractable : MonoBehaviour
     [Header("Game Scene 3")]
     public GameObject sceneHint;
 
+    [Header("Game Scene 4")]
+    public GameObject passwordHint;
+
+    [Header("Game Scene 5")]
+    public GameObject mapShowHint;
+    public GameObject map;
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Hand"))
@@ -41,7 +48,13 @@ public class ButtonInteractable : MonoBehaviour
                     break;
                 case 3:
                     StartCoroutine(ActivateSceneHint());
-                    break; 
+                    break;
+                case 4:
+                    StartCoroutine(ActivatePasswordHint());
+                    break;
+                case 5:
+                    StartCoroutine(ActivateMap());
+                    break;
                 default:
                     Debug.Log("No function");
                     break;
@@ -50,30 +63,45 @@ public class ButtonInteractable : MonoBehaviour
         }
     }
 
+    private IEnumerator AnimationRun()
+    {
+        // Wait until the "Button" animation state starts
+        while (true)
+        {
+            AnimatorStateInfo stateInfo = btnAnimation.GetCurrentAnimatorStateInfo(0);
+
+            // Check if the Animator has entered the "OpenBook" state
+            if (stateInfo.IsName("ButtonPress"))
+                break;
+
+            yield return null; // Wait until the state changes
+        }
+
+        // Wait until the animation finishes
+        while (true)
+        {
+            AnimatorStateInfo stateInfo = btnAnimation.GetCurrentAnimatorStateInfo(0);
+
+            // Check if the animation is still playing 
+            if (stateInfo.IsName("ButtonPress") && stateInfo.normalizedTime > 0.9f)
+                break;
+
+            yield return null; // Wait for the animation to complete
+        }
+    }
+
     private IEnumerator ActivateMathHint()
     {
-        // Wait until the animation state "ButtonPress" is finished
-        AnimatorStateInfo stateInfo = btnAnimation.GetCurrentAnimatorStateInfo(0);
-        while (stateInfo.IsName("ButtonPress") && stateInfo.normalizedTime < 1.0f)
-        {
-            yield return null;
-            stateInfo = btnAnimation.GetCurrentAnimatorStateInfo(0);
-        }
+        yield return AnimationRun();
 
         mathHint.SetActive(true);
     }
 
     private IEnumerator CompleteSliding16()
     {
-        // Wait until the animation state "ButtonPress" is finished
-        AnimatorStateInfo stateInfo = btnAnimation.GetCurrentAnimatorStateInfo(0);
-        while (stateInfo.IsName("ButtonPress") && stateInfo.normalizedTime < 1.0f)
-        {
-            yield return null;
-            stateInfo = btnAnimation.GetCurrentAnimatorStateInfo(0);
-        }
+        yield return AnimationRun();
 
-        if(sliding16.gameObject.activeSelf)
+        if (sliding16.gameObject.activeSelf)
         {
             sliding16.CompletePuzzleDirectly();
         }
@@ -81,13 +109,7 @@ public class ButtonInteractable : MonoBehaviour
 
     private IEnumerator AlarmClockSound()
     {
-        // Wait until the animation state "ButtonPress" is finished
-        AnimatorStateInfo stateInfo = btnAnimation.GetCurrentAnimatorStateInfo(0);
-        while (stateInfo.IsName("ButtonPress") && stateInfo.normalizedTime < 1.0f)
-        {
-            yield return null;
-            stateInfo = btnAnimation.GetCurrentAnimatorStateInfo(0);
-        }
+        yield return AnimationRun();
 
         if (alarmClock != null)
         {
@@ -98,15 +120,24 @@ public class ButtonInteractable : MonoBehaviour
 
     private IEnumerator ActivateSceneHint()
     {
-        // Wait until the animation state "ButtonPress" is finished
-        AnimatorStateInfo stateInfo = btnAnimation.GetCurrentAnimatorStateInfo(0);
-        while (stateInfo.IsName("ButtonPress") && stateInfo.normalizedTime < 1.0f)
-        {
-            yield return null;
-            stateInfo = btnAnimation.GetCurrentAnimatorStateInfo(0);
-        }
+        yield return AnimationRun();
 
         sceneHint.SetActive(true);
+    }
+
+    private IEnumerator ActivatePasswordHint()
+    {
+        yield return AnimationRun();
+
+        passwordHint.SetActive(true);
+    }
+
+    private IEnumerator ActivateMap()
+    {
+        yield return AnimationRun(); 
+
+        mapShowHint.SetActive(true);
+        map.SetActive(true);
     }
 }
 
@@ -140,6 +171,15 @@ public class ConditionalVariablesEditor : Editor
         else if (script.gameScene == 3)
         {
             EditorGUILayout.PropertyField(serializedObject.FindProperty("sceneHint"));
+        }
+        else if(script.gameScene == 4)
+        {
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("passwordHint"));
+        }
+        else if (script.gameScene == 5)
+        {
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("mapShowHint"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("map"));
         }
 
         // Apply changes
