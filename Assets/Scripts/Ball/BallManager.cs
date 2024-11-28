@@ -45,6 +45,31 @@ public class BallManager : MonoBehaviour
         }
     }
 
+    public void ActivateCheatMode()
+    {
+        foreach (var pair in socketObjectPairs)
+        {
+            // Get the socket interactor for the socket area
+            XRSocketInteractor socketInteractor = pair.socketArea.GetComponent<XRSocketInteractor>();
+
+            if (socketInteractor != null)
+            {
+                // Get the interactable component for the object
+                IXRSelectInteractable interactable = pair.objectPair.GetComponent<IXRSelectInteractable>();
+
+                if (interactable != null)
+                {
+                    // Simulate placing the object in the socket
+                    socketInteractor.StartManualInteraction(interactable);
+                    Debug.Log($"Placing {pair.objectPair.name} in {pair.socketArea.name}");
+                }
+            }
+        }
+
+        // Check and unlock the door if all pairs are correct
+        CheckAndOpenDoor(FindObjectOfType<OpenDoor>());
+    }
+
 }
 
 [System.Serializable]

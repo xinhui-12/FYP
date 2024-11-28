@@ -8,6 +8,7 @@ public class UIObjectInteraction : MonoBehaviour
     public GameObject player;
     private Vector3 lastInteractionPosition;
     public GameObject number;
+    public FadeScreen fadeScreen;
 
     void Start()
     {
@@ -22,7 +23,7 @@ public class UIObjectInteraction : MonoBehaviour
     {
         if (!PauseMenu.pause)
         {
-            
+            fadeScreen.FadeIn();
             lastInteractionPosition = player.transform.position;
             player.transform.position = maze.startPosition;
         }
@@ -31,6 +32,7 @@ public class UIObjectInteraction : MonoBehaviour
 
     public void ResetPlayerPosition()
     {
+        fadeScreen.FadeIn();
         player.transform.position = lastInteractionPosition;
         number.SetActive(true);
     }

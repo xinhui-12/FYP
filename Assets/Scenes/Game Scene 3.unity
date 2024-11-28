@@ -4747,7 +4747,6 @@ GameObject:
   m_Component:
   - component: {fileID: 765165660}
   - component: {fileID: 765165661}
-  - component: {fileID: 765165662}
   - component: {fileID: 765165663}
   m_Layer: 0
   m_Name: RightHand
@@ -5016,38 +5015,6 @@ MonoBehaviour:
     m_Reference: {fileID: -6447266317303757838, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   m_ButtonPressPoint: 0.5
---- !u!114 &765165662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 765165659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9853fa297dbbaa24b96c3bfa75d5df4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activePauseMenuUI: 1
-  gameMenu: {fileID: 1095237435}
-  pauseMenuUI: {fileID: 78324704}
-  albumMenu: {fileID: 1593838210}
-  settingMenu: {fileID: 1033311464}
-  resumeButton: {fileID: 869399589}
-  albumButton: {fileID: 829882643}
-  settingButton: {fileID: 1080297183}
-  exitButton: {fileID: 1707442504}
-  albumBackButton: {fileID: 1412083585}
-  soundEffectsSlider: {fileID: 1547297053}
-  musicSlider: {fileID: 656164291}
-  brightnessSlider: {fileID: 1909235751}
-  settingBackButton: {fileID: 1015359737}
-  soundEffectsSource: {fileID: 1794742262}
-  musicSource: {fileID: 215186548}
-  environmentLights:
-  - {fileID: 1502190547}
-  - {fileID: 108374314}
-  - {fileID: 1510956878}
 --- !u!64 &765165663
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8326,7 +8293,7 @@ GameObject:
   - component: {fileID: 1028540740}
   - component: {fileID: 1028540743}
   - component: {fileID: 1028540742}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: XR Origin
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -8412,7 +8379,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 765165662}
+      - m_Target: {fileID: 1095237441}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: PauseButtonPressed
         m_Mode: 0
@@ -8426,14 +8393,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 4975e20d-ae5c-411f-95c2-fc2b3268b4a7
     m_ActionName: Pause Menu/pauseMenuPress
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 5262cfbf-026f-4de8-a625-fa77cbf7db91
-    m_ActionName: Menu/RightBookFlip
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 9284d7fd-378e-4d88-8596-1923baf47104
-    m_ActionName: Menu/LeftBookFlip
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 94072d17-de5f-4426-b590-881adf766f1d
@@ -9231,11 +9190,8 @@ MonoBehaviour:
   musicSource: {fileID: 215186548}
   environmentLights:
   - {fileID: 1502190547}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 108374314}
   - {fileID: 1510956878}
-  - {fileID: 0}
 --- !u!114 &1095237442
 MonoBehaviour:
   m_ObjectHideFlags: 0

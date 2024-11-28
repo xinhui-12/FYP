@@ -1,54 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Xin Hui\\FYP\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|c:\\users\\xin hui\\fyp\\assets\\scripts\\menu\\pausemenumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menu\\pausemenumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|C:\\Users\\Xin Hui\\FYP\\assets\\scripts\\maze\\maze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\maze\\maze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PauseMenuManager.cs",
-              "DocumentMoniker": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Menu\\PauseMenuManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Menu\\PauseMenuManager.cs",
-              "ToolTip": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Menu\\PauseMenuManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Menu\\PauseMenuManager.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T10:48:10.351Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Maze.cs",
-              "DocumentMoniker": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Maze\\Maze.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Maze\\Maze.cs",
-              "ToolTip": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Maze\\Maze.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Maze\\Maze.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAADMAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T14:45:43.271Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

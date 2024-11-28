@@ -1,9 +1,8 @@
-using System.Collections;
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Sample {
 public class GhostScript : MonoBehaviour
 {
     private Animator Anim;
@@ -315,5 +314,4 @@ public class GhostScript : MonoBehaviour
             Anim.CrossFade(IdleState, 0.1f, 0, 0);
         }
     }
-}
 }
