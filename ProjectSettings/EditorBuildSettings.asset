@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 87f36c4bdb742254181c481c277566bf
   - enabled: 1
+    path: Assets/Scenes/Begining Cut Scene.unity
+    guid: fec367248f5b4cc438a2048084969142
+  - enabled: 1
     path: Assets/Scenes/Game Scene 1.unity
     guid: 43b4ad6445e955c49bcd193d61ac75fb
   - enabled: 1
@@ -23,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game Scene 5.unity
     guid: 062fb8028d4cd96458b6892b61958072
+  - enabled: 1
+    path: Assets/Scenes/End Cut Scene.unity
+    guid: 0e5347b59beb7de40b3c4bd15340b7ce
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: be594608e745fd54b98609e35c99fa14,
       type: 2}
