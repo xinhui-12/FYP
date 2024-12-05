@@ -7,6 +7,7 @@ public class CutSceneController : MonoBehaviour
 {
     public PlayableDirector playableDirector;
     public FadeScreen fadeScreen;
+    public bool endScene;
 
     private void OnEnable()
     {
@@ -30,13 +31,10 @@ public class CutSceneController : MonoBehaviour
 
     private void OnCutSceneEnded(PlayableDirector director)
     {
-        // Transition to the game scene when the cutscene ends
-        SceneTransitionManager.singleton.GoToScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
-    private void OnDestroy()
-    {
-        if (playableDirector)
-            playableDirector.stopped -= OnCutSceneEnded;
+        if (!endScene)
+            // Transition to the game scene when the cutscene ends
+            SceneTransitionManager.singleton.GoToScene(SceneManager.GetActiveScene().buildIndex + 1);
+        else
+            SceneTransitionManager.singleton.GoToScene(0);
     }
 }

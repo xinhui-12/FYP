@@ -31,7 +31,7 @@ public class BigMovement : MonoBehaviour
 
     void Update()
     {
-        moveSpeed = maxSpeed * (1 - Mathf.Clamp01((float)rulerSlash.slashTime / wordCheck.word.Length));
+        moveSpeed = maxSpeed * (1 - Mathf.Clamp01((float)rulerSlash.slashTime / wordCheck.word));
         if (moveSpeed == 0) return;
 
         elapsedTime += Time.deltaTime * moveSpeed;

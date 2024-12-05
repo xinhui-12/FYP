@@ -14,6 +14,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject albumMenu;
     public GameObject settingMenu;
+    public GameObject warningOfExit;
 
     [Header("Pause Menu Buttons")]
     public Button resumeButton;
@@ -30,21 +31,25 @@ public class PauseMenu : MonoBehaviour
     public Slider brightnessSlider;
     public Button settingBackButton;
 
-    public AudioSource soundEffectsSource;
+    [Tooltip("The element 0 should be the click sound.")]
+    public List<AudioSource> soundEffectsSource;
     public AudioSource musicSource;
     public List<Light> environmentLights;
+    private float[] lightIntensityOriginal;
 
     public static bool pause = false;
 
+    [Header("Warning Exit Dialog")]
+    public Button confirmButton;
+    public Button cancelButton;
 
     // Start is called before the first frame update
     void Start()
     {
-
         // Hook up pause menu buttons
         albumButton.onClick.AddListener(() => { PlayClickSound(); ShowAlbumMenu(); });
         settingButton.onClick.AddListener(() => { PlayClickSound(); ShowSettingMenu(); });
-        exitButton.onClick.AddListener(() => { PlayClickSound(); ExitGame(); });
+        exitButton.onClick.AddListener(() => { PlayClickSound(); ShowWarningDialog(); });
 
         // Hook up album menu buttons
         albumBackButton.onClick.AddListener(() => { PlayClickSound(); BackToPauseMenu(); });
@@ -52,16 +57,31 @@ public class PauseMenu : MonoBehaviour
         // Hook up setting menu buttons
         settingBackButton.onClick.AddListener(() => { PlayClickSound(); BackToPauseMenu(); });
 
+        lightIntensityOriginal = new float[environmentLights.Count];
+        for(int i = 0; i < environmentLights.Count; i++)
+        {
+            lightIntensityOriginal[i] = environmentLights[i].intensity;
+        }
+
         soundEffectsSlider.value = PlayerPrefs.GetFloat("SoundEffectsVolume", 1.0f);
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1.0f);
         brightnessSlider.value = PlayerPrefs.GetFloat("Brightness", 1.0f);
+        // To syncronised the setting value scene by scene
+        OnSoundEffectsSliderChanged(soundEffectsSlider.value);
+        OnMusicSliderChanged(musicSlider.value);
+        OnBrightnessSliderChanged(brightnessSlider.value);
 
         soundEffectsSlider.onValueChanged.AddListener(OnSoundEffectsSliderChanged);
         musicSlider.onValueChanged.AddListener(OnMusicSliderChanged);
         brightnessSlider.onValueChanged.AddListener(OnBrightnessSliderChanged);
 
+        confirmButton.onClick.AddListener(() => { PlayClickSound(); ExitGame(); });
+        cancelButton.onClick.AddListener(() => { PlayClickSound(); BackToPauseMenu(); });
+
         HideAll();
         DisplayPauseMenuUI();
+        Debug.Log(PlayerPrefs.GetFloat("MusicVolume"));
+        Debug.Log(PlayerPrefs.GetFloat("Brightness") * 100);
     }
 
     public void PauseButtonPressed(InputAction.CallbackContext context)
@@ -108,7 +128,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (soundEffectsSource != null)
         {
-            soundEffectsSource.PlayOneShot(soundEffectsSource.clip);
+            soundEffectsSource[0].PlayOneShot(soundEffectsSource[0].clip);
         }
     }
 
@@ -124,17 +144,27 @@ public class PauseMenu : MonoBehaviour
         settingMenu.SetActive(true);
     }
 
+    public void ShowWarningDialog()
+    {
+        HideAll();
+        warningOfExit.SetActive(true);
+    }
+
     public void HideAll()
     {
         pauseMenuUI.SetActive(false);
         albumMenu.SetActive(false);
         settingMenu.SetActive(false);
+        warningOfExit.SetActive(false);
     }
 
 
     private void OnSoundEffectsSliderChanged(float value)
     {
-        soundEffectsSource.volume = value;
+        foreach(AudioSource sound in soundEffectsSource)
+        {
+            sound.volume = value;
+        }
         PlayerPrefs.SetFloat("SoundEffectsVolume", value);
     }
 
@@ -146,9 +176,9 @@ public class PauseMenu : MonoBehaviour
 
     private void OnBrightnessSliderChanged(float value)
     {
-        foreach (Light light in environmentLights)
+        for (int i = 0; i < environmentLights.Count; i++)
         {
-            light.intensity = value;
+            environmentLights[i].intensity = value * lightIntensityOriginal[i];
         }
         PlayerPrefs.SetFloat("Brightness", value);
     }

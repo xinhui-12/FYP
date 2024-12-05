@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class WordCheck : MonoBehaviour
 {
-    public GameObject[] word;
+    public int word;
     public RulerSlash rulerSlash;
 
     void Update()
     {
-        if(rulerSlash.slashTime == word.Length)
+        if(rulerSlash.slashTime == word)
         {
             StartCoroutine(GoScene());
         }

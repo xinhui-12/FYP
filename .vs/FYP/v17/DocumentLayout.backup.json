@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Xin Hui\\FYP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|c:\\users\\xin hui\\fyp\\assets\\scripts\\menu\\gamestartmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menu\\gamestartmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|c:\\users\\xin hui\\fyp\\assets\\scripts\\menu\\pausemenumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menu\\pausemenumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|c:\\users\\xin hui\\fyp\\assets\\scripts\\menu\\scenetransitionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menu\\scenetransitionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|C:\\Users\\Xin Hui\\FYP\\assets\\scripts\\menu\\gamestartmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menu\\gamestartmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,30 +18,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SceneTransitionManager.cs",
-              "DocumentMoniker": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Menu\\SceneTransitionManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Menu\\SceneTransitionManager.cs",
-              "ToolTip": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Menu\\SceneTransitionManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Menu\\SceneTransitionManager.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAA8wDYAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "PauseMenuManager.cs",
+              "DocumentMoniker": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Menu\\PauseMenuManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Menu\\PauseMenuManager.cs",
+              "ToolTip": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Menu\\PauseMenuManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Menu\\PauseMenuManager.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwDQAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T08:32:17.577Z",
+              "WhenOpened": "2024-12-05T10:08:30.349Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "GameStartMenu.cs",
               "DocumentMoniker": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Menu\\GameStartMenu.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Menu\\GameStartMenu.cs",
               "ToolTip": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Menu\\GameStartMenu.cs",
               "RelativeToolTip": "Assets\\Scripts\\Menu\\GameStartMenu.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAYwEIAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAADwvxkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-03T08:31:41.17Z",
               "EditorCaption": ""

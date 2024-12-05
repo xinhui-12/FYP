@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,17 +22,15 @@ public class GameStartMenu : MonoBehaviour
     public Slider soundEffectsSlider;
     public Slider musicSlider;
     public Slider brightnessSlider;
-    public Button settingBackButton; 
-    
-    private SettingsManager settingsManager;
+    public Button settingBackButton;
+
+    public AudioSource soundEffectsSource;
+    public AudioSource musicSource;
+    public List<Light> environmentLights;
 
     // Start is called before the first frame update
     void Start()
     {
-       settingsManager = FindObjectOfType<SettingsManager>();
-
-        EnableMainMenu();
-
         // Hook up main menu buttons
         startButton.onClick.AddListener(() => { PlayClickSound(); StartGame(); });
         albumButton.onClick.AddListener(() => { PlayClickSound(); ShowAlbumMenu(); });
@@ -44,19 +43,23 @@ public class GameStartMenu : MonoBehaviour
         // Hook up setting menu buttons
         settingBackButton.onClick.AddListener(() => { PlayClickSound(); EnableMainMenu(); });
 
-        // Initialize the SettingsManager with the sliders
-        if (settingsManager != null)
-        {
-            settingsManager.soundEffectsSlider = soundEffectsSlider;
-            settingsManager.musicSlider = musicSlider;
-            settingsManager.brightnessSlider = brightnessSlider;
-        }
+        soundEffectsSlider.value = PlayerPrefs.GetFloat("SoundEffectsVolume", 1.0f);
+        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1.0f);
+        brightnessSlider.value = PlayerPrefs.GetFloat("Brightness", 1.0f);
 
+        soundEffectsSlider.onValueChanged.AddListener(OnSoundEffectsSliderChanged);
+        musicSlider.onValueChanged.AddListener(OnMusicSliderChanged);
+        brightnessSlider.onValueChanged.AddListener(OnBrightnessSliderChanged);
+
+        EnableMainMenu();
     }
 
     private void PlayClickSound()
     {
-        settingsManager?.PlayClickSound();
+        if (soundEffectsSource != null)
+        {
+            soundEffectsSource.PlayOneShot(soundEffectsSource.clip);
+        }
     }
 
     public void QuitGame()
@@ -93,5 +96,26 @@ public class GameStartMenu : MonoBehaviour
     {
         HideAll();
         mainMenu.SetActive(true);
+    }
+
+    private void OnSoundEffectsSliderChanged(float value)
+    {
+        soundEffectsSource.volume = value;
+        PlayerPrefs.SetFloat("SoundEffectsVolume", value);
+    }
+
+    private void OnMusicSliderChanged(float value)
+    {
+        musicSource.volume = value;
+        PlayerPrefs.SetFloat("MusicVolume", value);
+    }
+
+    private void OnBrightnessSliderChanged(float value)
+    {
+        foreach (Light light in environmentLights)
+        {
+            light.intensity = value;
+        }
+        PlayerPrefs.SetFloat("Brightness", value);
     }
 }

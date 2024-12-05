@@ -29,7 +29,7 @@ public class CanvaMovement : MonoBehaviour
 
     void Update()
     {
-        moveSpeed = maxSpeed * (1 - Mathf.Clamp01((float)rulerSlash.slashTime / wordCheck.word.Length));
+        moveSpeed = maxSpeed * (1 - Mathf.Clamp01((float)rulerSlash.slashTime / wordCheck.word));
         if (moveSpeed == 0) return;
 
         // Move the UI element towards the target position

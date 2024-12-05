@@ -24,7 +24,7 @@ public class ObjectMovement : MonoBehaviour
 
     void Update()
     {
-        moveSpeed = maxSpeed * (1 - Mathf.Clamp01((float)rulerSlash.slashTime / wordCheck.word.Length));
+        moveSpeed = maxSpeed * (1 - Mathf.Clamp01((float)rulerSlash.slashTime / wordCheck.word));
         if (moveSpeed == 0) return;
 
         // Move towards the target position
