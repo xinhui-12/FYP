@@ -12,9 +12,10 @@ public class ButtonInteractable : MonoBehaviour
     public GameObject mathHint;
 
     [Header("Game Scene 2")]
-    public SlidingPuzzle sliding16;
+    public Drawer_Pull_X drawer;
     public bool correctButton;
     public GameObject alarmClock;
+    public SlidingPuzzle sliding16;
 
     [Header("Game Scene 3")]
     public GameObject sceneHint;
@@ -37,13 +38,16 @@ public class ButtonInteractable : MonoBehaviour
                     StartCoroutine(ActivateMathHint());
                     break;
                 case 2:
-                    if (correctButton)
+                    if (drawer.open)
                     {
-                        StartCoroutine(CompleteSliding16());
-                    }
-                    else
-                    {
-                        StartCoroutine(AlarmClockSound());
+                        if (correctButton)
+                        {
+                            StartCoroutine(CompleteSliding16());
+                        }
+                        else
+                        {
+                            StartCoroutine(AlarmClockSound());
+                        }
                     }
                     break;
                 case 3:
@@ -59,7 +63,7 @@ public class ButtonInteractable : MonoBehaviour
                     Debug.Log("No function");
                     break;
             }
-            
+
         }
     }
 
@@ -134,7 +138,7 @@ public class ButtonInteractable : MonoBehaviour
 
     private IEnumerator ActivateMap()
     {
-        yield return AnimationRun(); 
+        yield return AnimationRun();
 
         mapShowHint.SetActive(true);
         map.SetActive(true);
@@ -161,18 +165,23 @@ public class ConditionalVariablesEditor : Editor
         }
         else if (script.gameScene == 2)
         {
-            EditorGUILayout.PropertyField(serializedObject.FindProperty("sliding16"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("drawer"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("correctButton"));
+
             if (!script.correctButton)
             {
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("alarmClock"));
+            }
+            else
+            {
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("sliding16"));
             }
         }
         else if (script.gameScene == 3)
         {
             EditorGUILayout.PropertyField(serializedObject.FindProperty("sceneHint"));
         }
-        else if(script.gameScene == 4)
+        else if (script.gameScene == 4)
         {
             EditorGUILayout.PropertyField(serializedObject.FindProperty("passwordHint"));
         }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class GameStartMenu : MonoBehaviour
@@ -46,6 +47,16 @@ public class GameStartMenu : MonoBehaviour
         soundEffectsSlider.value = PlayerPrefs.GetFloat("SoundEffectsVolume", 1.0f);
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1.0f);
         brightnessSlider.value = PlayerPrefs.GetFloat("Brightness", 1.0f);
+
+        // To syncronised the setting value
+        OnSoundEffectsSliderChanged(soundEffectsSlider.value);
+        OnMusicSliderChanged(musicSlider.value);
+        OnBrightnessSliderChanged(brightnessSlider.value);
+
+        // To add click sound on the slider
+        AddPointerUpEvent(soundEffectsSlider);
+        AddPointerUpEvent(musicSlider);
+        AddPointerUpEvent(brightnessSlider);
 
         soundEffectsSlider.onValueChanged.AddListener(OnSoundEffectsSliderChanged);
         musicSlider.onValueChanged.AddListener(OnMusicSliderChanged);
@@ -117,5 +128,23 @@ public class GameStartMenu : MonoBehaviour
             light.intensity = value;
         }
         PlayerPrefs.SetFloat("Brightness", value);
+    }
+
+    private void AddPointerUpEvent(Slider slider)
+    {
+        // Add EventTrigger component if it doesn't exist
+        EventTrigger trigger = slider.gameObject.GetComponent<EventTrigger>();
+        if (trigger == null)
+        {
+            trigger = slider.gameObject.AddComponent<EventTrigger>();
+        }
+
+        // Create and add the PointerUp event
+        EventTrigger.Entry pointerUpEntry = new EventTrigger.Entry
+        {
+            eventID = EventTriggerType.PointerUp
+        };
+        pointerUpEntry.callback.AddListener((data) => { PlayClickSound(); });
+        trigger.triggers.Add(pointerUpEntry);
     }
 }

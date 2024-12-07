@@ -1,25 +1,26 @@
+
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class JumpScare : MonoBehaviour
 {
     public GameObject picture;
+    public Transform player;
+    public Maze maze;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             picture.SetActive(true);
-            StartCoroutine(ReloadScene());
+            // Cannot back to original place
+            Invoke(nameof(PlayerBackToStart), 2);
         }
     }
-
-    IEnumerator ReloadScene()
+    private void PlayerBackToStart()
     {
-        yield return new WaitForSeconds(2);
-        // Reload the current scene
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        player.position = new Vector3(maze.startPosition.x, maze.startPosition.y + 1, maze.startPosition.z);
+        picture?.SetActive(false);
     }
 }

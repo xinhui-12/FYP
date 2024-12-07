@@ -18,10 +18,9 @@ public class PhotoGallery : MonoBehaviour
 
     void Start()
     {
-        //path = Application.dataPath + "/ScriptsVault-ProjektSumperk/PhotoGallery/Photos";
         path = Application.dataPath + "/2D images/Album";
         LoadImageGallery();
-        Debug.Log(path);
+        UnlockPhoto("pic1");
     }
 
     public void GetPhotoImages(Sprite sprite)

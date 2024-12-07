@@ -663,7 +663,7 @@ GameObject:
   - component: {fileID: 37730997}
   - component: {fileID: 37730996}
   m_Layer: 5
-  m_Name: White scary ghost
+  m_Name: Bathtub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -718,11 +718,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -740,7 +740,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1804149389}
-  m_PlaneDistance: 0.1
+  m_PlaneDistance: 0.5
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -6901,16 +6901,15 @@ MonoBehaviour:
   patrolEnd: {fileID: 231785395}
   patrolSpeed: 1
   player: {fileID: 1028540730}
-  detectionRange: 50
-  detectionAngle: 20
+  detectionRange: 40
+  detectionAngle: 15
   chaseSpeed: 1.5
   maxLookAroundAngle: 90
   rotationSpeed: 2
   lookAroundTimer: 10
   attackRange: 2
   isCheatModeActive: 0
-  enableReload: 1
-  maze: {fileID: 0}
+  maze: {fileID: 746430231}
   fadeScreen: {fileID: 925084228}
   playerCamera: {fileID: 1804149385}
 --- !u!1 &262185131
@@ -8402,7 +8401,7 @@ GameObject:
   - component: {fileID: 293616213}
   - component: {fileID: 293616212}
   m_Layer: 5
-  m_Name: eye
+  m_Name: Black eyed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8457,11 +8456,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -8479,7 +8478,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1804149389}
-  m_PlaneDistance: 0.1
+  m_PlaneDistance: 0.5
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -9704,16 +9703,15 @@ MonoBehaviour:
   patrolEnd: {fileID: 1132637849}
   patrolSpeed: 1
   player: {fileID: 1028540730}
-  detectionRange: 60
-  detectionAngle: 40
+  detectionRange: 40
+  detectionAngle: 15
   chaseSpeed: 1.5
   maxLookAroundAngle: 90
   rotationSpeed: 2
   lookAroundTimer: 10
   attackRange: 2
   isCheatModeActive: 0
-  enableReload: 1
-  maze: {fileID: 0}
+  maze: {fileID: 746430231}
   fadeScreen: {fileID: 925084228}
   playerCamera: {fileID: 1804149385}
 --- !u!195 &367154231
@@ -13111,7 +13109,7 @@ GameObject:
   - component: {fileID: 519168539}
   - component: {fileID: 519168538}
   m_Layer: 5
-  m_Name: White scary ghost
+  m_Name: room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13166,11 +13164,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -13188,7 +13186,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1804149389}
-  m_PlaneDistance: 0.1
+  m_PlaneDistance: 0.5
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -15944,6 +15942,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba, type: 3}
+--- !u!114 &638010781 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5552247448812944183, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 638010780}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9853fa297dbbaa24b96c3bfa75d5df4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &641985902
 GameObject:
   m_ObjectHideFlags: 0
@@ -18273,10 +18283,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 293616211}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &707113581
 MonoBehaviour:
@@ -18298,7 +18308,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: ba0d8cb20b070ce4d9d564b7063ffb18, type: 3}
+  m_Texture: {fileID: 2800000, guid: f621e30a37f9a8846888b34f6bdfd43b, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -20216,6 +20226,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   picture: {fileID: 37730994}
+  player: {fileID: 1028540730}
+  maze: {fileID: 746430231}
 --- !u!1 &751364596
 GameObject:
   m_ObjectHideFlags: 0
@@ -23760,7 +23772,7 @@ GameObject:
   - component: {fileID: 872539121}
   - component: {fileID: 872539120}
   m_Layer: 5
-  m_Name: eye
+  m_Name: drawing family
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23815,11 +23827,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -23837,7 +23849,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1804149389}
-  m_PlaneDistance: 0.1
+  m_PlaneDistance: 0.5
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -28688,7 +28700,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 638010781}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: PauseButtonPressed
         m_Mode: 0
@@ -31980,7 +31992,7 @@ GameObject:
   - component: {fileID: 1188343647}
   - component: {fileID: 1188343646}
   m_Layer: 5
-  m_Name: White scary ghost
+  m_Name: lonely
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32035,11 +32047,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -32057,7 +32069,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1804149389}
-  m_PlaneDistance: 0.1
+  m_PlaneDistance: 0.5
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -36555,10 +36567,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 37730995}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 239, y: 236}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1369306399
 MonoBehaviour:
@@ -36580,7 +36592,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: c1ee89ac9cab3ed4dace40bef45b2541, type: 3}
+  m_Texture: {fileID: 2800000, guid: 562fe9b4ed244394aa700e0a0df3214a, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -40595,10 +40607,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 872539119}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 317, y: 315}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1464600598
 MonoBehaviour:
@@ -40620,7 +40632,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: ba0d8cb20b070ce4d9d564b7063ffb18, type: 3}
+  m_Texture: {fileID: 2800000, guid: 2f5274ce8aeaff1429e6d4cc325909f9, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -41001,10 +41013,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1188343645}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1470396052
 MonoBehaviour:
@@ -41026,7 +41038,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: c1ee89ac9cab3ed4dace40bef45b2541, type: 3}
+  m_Texture: {fileID: 2800000, guid: c3cb3166ac8bd5b41aba3db1c93e44b5, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -44628,6 +44640,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   picture: {fileID: 519168536}
+  player: {fileID: 1028540730}
+  maze: {fileID: 746430231}
 --- !u!65 &1591707554
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46517,6 +46531,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   picture: {fileID: 1188343644}
+  player: {fileID: 1028540730}
+  maze: {fileID: 746430231}
 --- !u!65 &1687501673
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54944,10 +54960,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 519168537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2019362083
 MonoBehaviour:
@@ -54963,13 +54979,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: c1ee89ac9cab3ed4dace40bef45b2541, type: 3}
+  m_Texture: {fileID: 2800000, guid: 5704ac4b1c7ff3648ad7d6eb243943ce, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -55240,6 +55256,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   picture: {fileID: 872539118}
+  player: {fileID: 1028540730}
+  maze: {fileID: 746430231}
 --- !u!65 &2030219270
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56821,6 +56839,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   picture: {fileID: 293616210}
+  player: {fileID: 1028540730}
+  maze: {fileID: 746430231}
 --- !u!65 &2112750284
 BoxCollider:
   m_ObjectHideFlags: 0

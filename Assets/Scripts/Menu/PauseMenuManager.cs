@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -47,6 +48,7 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         // Hook up pause menu buttons
+        resumeButton.onClick.AddListener(() => { PlayClickSound(); ResumeGame(); });
         albumButton.onClick.AddListener(() => { PlayClickSound(); ShowAlbumMenu(); });
         settingButton.onClick.AddListener(() => { PlayClickSound(); ShowSettingMenu(); });
         exitButton.onClick.AddListener(() => { PlayClickSound(); ShowWarningDialog(); });
@@ -63,13 +65,20 @@ public class PauseMenu : MonoBehaviour
             lightIntensityOriginal[i] = environmentLights[i].intensity;
         }
 
+        // Get same value from PlayerPrefs for all scene
         soundEffectsSlider.value = PlayerPrefs.GetFloat("SoundEffectsVolume", 1.0f);
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1.0f);
         brightnessSlider.value = PlayerPrefs.GetFloat("Brightness", 1.0f);
-        // To syncronised the setting value scene by scene
+
+        // To syncronised the setting value
         OnSoundEffectsSliderChanged(soundEffectsSlider.value);
         OnMusicSliderChanged(musicSlider.value);
         OnBrightnessSliderChanged(brightnessSlider.value);
+
+        // To add click sound on the slider
+        AddPointerUpEvent(soundEffectsSlider);
+        AddPointerUpEvent(musicSlider);
+        AddPointerUpEvent(brightnessSlider);
 
         soundEffectsSlider.onValueChanged.AddListener(OnSoundEffectsSliderChanged);
         musicSlider.onValueChanged.AddListener(OnMusicSliderChanged);
@@ -80,8 +89,6 @@ public class PauseMenu : MonoBehaviour
 
         HideAll();
         DisplayPauseMenuUI();
-        Debug.Log(PlayerPrefs.GetFloat("MusicVolume"));
-        Debug.Log(PlayerPrefs.GetFloat("Brightness") * 100);
     }
 
     public void PauseButtonPressed(InputAction.CallbackContext context)
@@ -183,6 +190,23 @@ public class PauseMenu : MonoBehaviour
         PlayerPrefs.SetFloat("Brightness", value);
     }
 
+    private void AddPointerUpEvent(Slider slider)
+    {
+        // Add EventTrigger component if it doesn't exist
+        EventTrigger trigger = slider.gameObject.GetComponent<EventTrigger>();
+        if (trigger == null)
+        {
+            trigger = slider.gameObject.AddComponent<EventTrigger>();
+        }
+
+        // Create and add the PointerUp event
+        EventTrigger.Entry pointerUpEntry = new EventTrigger.Entry
+        {
+            eventID = EventTriggerType.PointerUp
+        };
+        pointerUpEntry.callback.AddListener((data) => { PlayClickSound(); });
+        trigger.triggers.Add(pointerUpEntry);
+    }
     public void ResumeGame()
     {
         activePauseMenuUI = true;

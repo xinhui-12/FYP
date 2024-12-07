@@ -43,7 +43,6 @@ public class Ghost : MonoBehaviour
     private GhostState currentState;
     [HideInInspector]
     public bool isCheatModeActive = false;
-    public bool enableReload = true;
     public Maze maze;
     public FadeScreen fadeScreen;
     public Transform playerCamera;
@@ -180,17 +179,8 @@ public class Ghost : MonoBehaviour
         Anim.CrossFade(AttackState, 0.1f, 0);
 
         float attackAnimationDuration = GetAnimationClipLength("ghost_attack");
-        if (enableReload)
-        {
-            // Reload scene after attack animation
-            Invoke(nameof(ReloadScene), attackAnimationDuration + 1f);
-        }
-        else
-        {
-            // Back to start point
-            Invoke(nameof(BackToStartPoint), attackAnimationDuration + 1f);
-        }
-
+        // Back to start point
+        Invoke(nameof(BackToStartPoint), attackAnimationDuration + 1f);
     }
 
     private void PositionInFrontOfPlayer()
@@ -221,13 +211,7 @@ public class Ghost : MonoBehaviour
         return 0f; // Return 0 if clip not found
     }
 
-    private void ReloadScene()
-    {
-        // Reload the current scene
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    private void BackToStartPoint()
+    public void BackToStartPoint()
     {
         fadeScreen.FadeIn();
         player.position = new Vector3(maze.startPosition.x, maze.startPosition.y + 1, maze.startPosition.z);

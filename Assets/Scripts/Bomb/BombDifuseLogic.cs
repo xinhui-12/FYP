@@ -24,6 +24,7 @@ public class BombDifuseLogic : MonoBehaviour
     private bool explode = false;
     [HideInInspector]
     public static bool Defuse { get; private set; } = false;
+    private bool isExploring = false;
 
     public void Start()
     {
@@ -39,6 +40,7 @@ public class BombDifuseLogic : MonoBehaviour
         {
             countdownTimer = GetComponent<CountdownTimer>();
         }
+        isExploring = false;
     }
 
     private void InitSelectionDisplay()
@@ -69,8 +71,9 @@ public class BombDifuseLogic : MonoBehaviour
             explode = true;
         }
 
-        if (explode)
+        if (explode && !isExploring)
         {
+            isExploring = true;
             HandleExplosion();
         }
     }
@@ -106,7 +109,7 @@ public class BombDifuseLogic : MonoBehaviour
             triggerIndex = 4;
         }
 
-        Debug.Log($"trigger index: {triggerIndex}");
+        //Debug.Log($"trigger index: {triggerIndex}");
         bool isCorrect = false;
         switch (stageNumber)
         {
@@ -127,7 +130,7 @@ public class BombDifuseLogic : MonoBehaviour
                 break;
             default: break;
         }
-        Debug.Log($"Is correct: {isCorrect}");
+        //Debug.Log($"Is correct: {isCorrect}");
         if (isCorrect && stageNumber < 3)
         {
             stageNumber++;
@@ -259,15 +262,17 @@ public class BombDifuseLogic : MonoBehaviour
     {
         if (explosionAudio != null && fadeScreen != null)
         {
-            fadeScreen.fadeDuration = explosionAudio.clip.length;
-            fadeScreen.FadeIn();
-            explosionAudio.Play();
+            explosionAudio.PlayOneShot(explosionAudio.clip);
+            fadeScreen.fadeDuration = 3;
+            fadeScreen.FadeOut();
         }
         if (parentScoldAudio != null)
         {
-            Invoke(nameof(PlayScoldAudio), 1.5f);
+            Invoke(nameof(PlayScoldAudio), explosionAudio.clip.length);
         }
-        float resetDelay = explosionAudio != null ? explosionAudio.clip.length : 0;
+
+        float resetDelay = explosionAudio.clip.length + parentScoldAudio.clip.length + 1;
+        Debug.Log(resetDelay);
         Invoke(nameof(ResetScene), resetDelay);
     }
 

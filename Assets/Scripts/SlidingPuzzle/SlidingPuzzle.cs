@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SlidingPuzzle : MonoBehaviour
 {
@@ -241,7 +242,7 @@ public class SlidingPuzzle : MonoBehaviour
     public void StopCountdown()
     {
         isCountdownRunning = false;
-        SceneTransitionManager.singleton.GoToScene(1);
+        SceneTransitionManager.singleton.GoToScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     private void UpdateCountdownDisplay()

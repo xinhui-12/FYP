@@ -3282,15 +3282,14 @@ MonoBehaviour:
   patrolEnd: {fileID: 2111687481}
   patrolSpeed: 1
   player: {fileID: 1028540730}
-  detectionRange: 50
-  detectionAngle: 20
+  detectionRange: 40
+  detectionAngle: 15
   chaseSpeed: 1.5
   maxLookAroundAngle: 90
   rotationSpeed: 2
   lookAroundTimer: 10
   attackRange: 2
   isCheatModeActive: 0
-  enableReload: 0
   maze: {fileID: 746430231}
   fadeScreen: {fileID: 925084228}
   playerCamera: {fileID: 1804149385}
@@ -8920,7 +8919,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1.5}
+  m_LocalScale: {x: 1.5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1850034419}
@@ -8938,6 +8937,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   picture: {fileID: 1065867595}
+  player: {fileID: 1028540730}
+  maze: {fileID: 746430231}
 --- !u!65 &222820082
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9480,15 +9481,14 @@ MonoBehaviour:
   patrolEnd: {fileID: 704282467}
   patrolSpeed: 1
   player: {fileID: 1028540730}
-  detectionRange: 60
-  detectionAngle: 40
+  detectionRange: 40
+  detectionAngle: 15
   chaseSpeed: 1.5
   maxLookAroundAngle: 90
   rotationSpeed: 2
   lookAroundTimer: 10
   attackRange: 2
   isCheatModeActive: 0
-  enableReload: 0
   maze: {fileID: 746430231}
   fadeScreen: {fileID: 925084228}
   playerCamera: {fileID: 1804149385}
@@ -17929,6 +17929,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   picture: {fileID: 227820180}
+  player: {fileID: 1028540730}
+  maze: {fileID: 746430231}
 --- !u!65 &535832292
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23010,7 +23012,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738494899}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
@@ -32052,7 +32054,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1750784474}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: PauseButtonPressed
         m_Mode: 0
@@ -32138,8 +32140,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1.8
+  m_Radius: 0.3
+  m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1028540743
@@ -32852,7 +32854,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065867595}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
@@ -43221,6 +43223,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   picture: {fileID: 738494899}
+  player: {fileID: 1028540730}
+  maze: {fileID: 746430231}
 --- !u!65 &1399333831
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52729,10 +52733,70 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 15904118982538887, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400416892698444152, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 697354167964509561, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba,
         type: 3}
       propertyPath: m_Name
       value: Game Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056379230138742744, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056379230138742744, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056379230138742744, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074165991342916641, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074165991342916641, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074165991342916641, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079513217010591541, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157196569444540991, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227511997545531602, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802020044717178569, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5552247448812944183, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba,
         type: 3}
@@ -52789,6 +52853,21 @@ PrefabInstance:
       propertyPath: soundEffectsSource.Array.data[4]
       value: 
       objectReference: {fileID: 1585333}
+    - target: {fileID: 5620267514611292935, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 5620267514611292935, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 5620267514611292935, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.78431374
+      objectReference: {fileID: 0}
     - target: {fileID: 6537363551548991531, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba,
         type: 3}
       propertyPath: m_Pivot.x
@@ -52894,11 +52973,28 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1804149389}
+    - target: {fileID: 7162528032712274837, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba, type: 3}
+--- !u!114 &1750784474 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5552247448812944183, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 1750784473}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9853fa297dbbaa24b96c3bfa75d5df4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1758232045 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 488980, guid: 92794c55695387544b0181380f46d6ec,
@@ -55444,7 +55540,7 @@ Transform:
   m_GameObject: {fileID: 1850034418}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.29, y: 0.623, z: 7.26}
+  m_LocalPosition: {x: -0.952, y: 0.623, z: 6.546}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -56548,6 +56644,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   picture: {fileID: 1344351613}
+  player: {fileID: 1028540730}
+  maze: {fileID: 746430231}
 --- !u!65 &1882317902
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58335,6 +58433,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   picture: {fileID: 1101536533}
+  player: {fileID: 1028540730}
+  maze: {fileID: 746430231}
 --- !u!65 &1936358212
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59665,7 +59765,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -4.94, y: 0.05, z: -5}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1727074790}
@@ -62015,7 +62115,7 @@ Transform:
   m_GameObject: {fileID: 2088099850}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.2, z: 0}
+  m_LocalPosition: {x: -0, y: 1.2, z: -2.475}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

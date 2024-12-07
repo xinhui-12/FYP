@@ -1545,6 +1545,18 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &231537476 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5018950055006186486, guid: c15f037642a1e1b439d19869e86e1ddf,
+    type: 3}
+  m_PrefabInstance: {fileID: 523084746}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231537470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0d5557a01f4e0740bd53d6ed2ab7327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &232359653
 GameObject:
   m_ObjectHideFlags: 0
@@ -2266,6 +2278,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6839996961864697617, guid: d7707a53079e23c429c81423ee49f370,
         type: 3}
+      propertyPath: drawer
+      value: 
+      objectReference: {fileID: 231537476}
+    - target: {fileID: 6839996961864697617, guid: d7707a53079e23c429c81423ee49f370,
+        type: 3}
       propertyPath: gameScene
       value: 2
       objectReference: {fileID: 0}
@@ -2453,7 +2470,7 @@ PrefabInstance:
     - target: {fileID: 5018950055216721060, guid: c15f037642a1e1b439d19869e86e1ddf,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 5018950055216721060, guid: c15f037642a1e1b439d19869e86e1ddf,
         type: 3}
@@ -3135,12 +3152,12 @@ PrefabInstance:
     - target: {fileID: 3795626296609578864, guid: af882b3e710df4b41aa64bb4832c8f4e,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 3795626296609578864, guid: af882b3e710df4b41aa64bb4832c8f4e,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 3795626296609578864, guid: af882b3e710df4b41aa64bb4832c8f4e,
         type: 3}
@@ -4306,6 +4323,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 523084746}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &867086404 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5018950054057871647, guid: c15f037642a1e1b439d19869e86e1ddf,
+    type: 3}
+  m_PrefabInstance: {fileID: 523084746}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867086397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0d5557a01f4e0740bd53d6ed2ab7327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &892314394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4429,7 +4458,7 @@ PrefabInstance:
     - target: {fileID: 2565630725004344934, guid: 5e0aa061218e946c79c9508cd99f9da9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.497
+      value: -3.627
       objectReference: {fileID: 0}
     - target: {fileID: 2565630725004344934, guid: 5e0aa061218e946c79c9508cd99f9da9,
         type: 3}
@@ -5799,7 +5828,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1904865470}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: PauseButtonPressed
         m_Mode: 0
@@ -6153,7 +6182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013930057638, guid: 3f6ef443252cefb47b547930837634aa, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4000013930057638, guid: 3f6ef443252cefb47b547930837634aa, type: 3}
       propertyPath: m_LocalScale.z
@@ -9433,6 +9462,18 @@ PrefabInstance:
       addedObject: {fileID: 1793285512}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+--- !u!114 &1904865470 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5552247448812944183, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 69836253}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9853fa297dbbaa24b96c3bfa75d5df4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1921510405
 GameObject:
   m_ObjectHideFlags: 0
@@ -9539,6 +9580,11 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6839996961864697617, guid: d7707a53079e23c429c81423ee49f370,
+        type: 3}
+      propertyPath: drawer
+      value: 
+      objectReference: {fileID: 867086404}
     - target: {fileID: 6839996961864697617, guid: d7707a53079e23c429c81423ee49f370,
         type: 3}
       propertyPath: gameScene
