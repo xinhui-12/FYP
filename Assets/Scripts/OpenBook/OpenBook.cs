@@ -21,13 +21,13 @@ public class OpenBook : MonoBehaviour
             grabInteractable = GetComponent<XRGrabInteractable>();
 
         grabInteractable.selectEntered.AddListener(OnSelectEntered);
-        //grabInteractable.selectExited.AddListener(OnSelectExited);
+        grabInteractable.selectExited.AddListener(OnSelectExited);
     }
 
     private void OnDestroy()
     {
         grabInteractable.selectEntered.RemoveListener(OnSelectEntered);
-        //grabInteractable.selectExited.RemoveListener(OnSelectExited);
+        grabInteractable.selectExited.RemoveListener(OnSelectExited);
     }
 
     private void Start()
@@ -45,6 +45,7 @@ public class OpenBook : MonoBehaviour
             transform.rotation = Quaternion.Euler(90, 90, 0);
             isHeld = true;
             bookAnimator.SetBool("isOpen", false);
+            bookCanva?.SetActive(false);
         }
         else if (handObj == leftHand && isHeld)
         {
@@ -105,5 +106,17 @@ public class OpenBook : MonoBehaviour
     private void ReenableGrabInteractable()
     {
         grabInteractable.enabled = true;
+    }
+
+    private void OnSelectExited(SelectExitEventArgs args)
+    {
+        GameObject handObj = args.interactorObject.transform.parent.gameObject;
+
+        if (handObj == rightHand)
+        {
+            isHeld = false;
+            bookAnimator.SetBool("isOpen", false);
+        }
+
     }
 }

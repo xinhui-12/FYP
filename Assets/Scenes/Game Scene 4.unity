@@ -8208,7 +8208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mode: 0
-  PageFlipTime: 1
+  PageFlipTime: 0.25
   TimeBetweenPages: 1
   DelayBeforeStarting: 0
   AutoStartFlip: 0
@@ -8686,17 +8686,17 @@ PrefabInstance:
     - target: {fileID: 1593529156830139025, guid: 7d09c64c10ed9954c8c5f262a0a2e5fe,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.166
+      value: 4.168
       objectReference: {fileID: 0}
     - target: {fileID: 1593529156830139025, guid: 7d09c64c10ed9954c8c5f262a0a2e5fe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6
+      value: 0.33
       objectReference: {fileID: 0}
     - target: {fileID: 1593529156830139025, guid: 7d09c64c10ed9954c8c5f262a0a2e5fe,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.036
+      value: 1.767
       objectReference: {fileID: 0}
     - target: {fileID: 1593529156830139025, guid: 7d09c64c10ed9954c8c5f262a0a2e5fe,
         type: 3}
@@ -8956,7 +8956,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_AttachTransform: {fileID: 577259524}
-  m_SecondaryAttachTransform: {fileID: 1767898790}
+  m_SecondaryAttachTransform: {fileID: 0}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
