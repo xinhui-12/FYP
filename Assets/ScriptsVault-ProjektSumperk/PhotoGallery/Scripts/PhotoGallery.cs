@@ -12,46 +12,68 @@ public class PhotoGallery : MonoBehaviour
     public GameObject imagePrefab;
     public Transform parent;
     public GameObject FullScreenPanel;
+    public AudioSource soundEffectsSource;
 
     // List of unlocked photos
     public List<string> unlockedPhotos = new List<string>();
 
+    // Dictionary to track instantiated images
+    private Dictionary<string, GameObject> instantiatedImages = new();
+
     void Start()
     {
         path = Application.dataPath + "/2D images/Album";
+        LoadUnlockedPhotos();
         LoadImageGallery();
-        UnlockPhoto("pic1");
+        UnlockPhoto("pic1.png"); // Test Unlock
     }
 
     public void GetPhotoImages(Sprite sprite)
     {
+        PlayClickSound();
         FullScreenPanel.SetActive(true);
         FullScreenPanel.GetComponent<Image>().sprite = sprite;
+    }
+
+    public void PlayClickSound()
+    {
+        if (soundEffectsSource != null)
+        {
+            soundEffectsSource.PlayOneShot(soundEffectsSource.clip);
+        }
     }
 
     void LoadImageGallery()
     {
         if (Directory.Exists(path))
         {
-            DirectoryInfo d = new DirectoryInfo(path);
+            DirectoryInfo d = new(path);
 
             foreach (var extension in new string[] { "*.png", "*.jpg", "*.jpeg" })
             {
                 foreach (var file in d.GetFiles(extension))
                 {
+                    // Skip already instantiated images
+                    if (instantiatedImages.ContainsKey(file.Name))
+                        continue;
+
                     GameObject images = Instantiate(imagePrefab, parent);
                     images.name = file.Name;
                     string fileURL = "file:///" + file.FullName;
+
                     Image imageComponent = images.GetComponent<Image>();
                     StartCoroutine(LoadImage(fileURL, imageComponent, file.Name));
 
                     // Add the GetPhoto component and set it up
-                    GetPhoto getPhoto = images.AddComponent<GetPhoto>();
+                    GetPhoto getPhoto = images.GetComponent<GetPhoto>();
                     getPhoto.photoGallery = this;
 
                     // Lock or unlock the photo based on its status
                     bool isUnlocked = unlockedPhotos.Contains(file.Name);
                     LockOrUnlockImage(imageComponent, getPhoto, isUnlocked);
+
+                    // Add to instantiated images dictionary
+                    instantiatedImages[file.Name] = images;
                 }
             }
         }
@@ -67,12 +89,15 @@ public class PhotoGallery : MonoBehaviour
         if (isUnlocked)
         {
             img.color = Color.white; // Normal color
-            getPhoto.enabled = true; // Enable click functionality
+            // Enable click functionality
+            getPhoto.gameObject.GetComponent<Button>().enabled = true;
         }
         else
         {
-            img.color = Color.gray; // Grayscale color
-            getPhoto.enabled = false; // Disable click functionality
+            //img.color = Color.gray; // Grayscale color
+            img.color = new Color(0.2f, 0.2f, 0.2f);
+            // Disable click functionality
+            getPhoto.gameObject.GetComponent<Button>().enabled = false;
         }
     }
 
@@ -100,10 +125,19 @@ public class PhotoGallery : MonoBehaviour
 
         if (www.result == UnityWebRequest.Result.Success)
         {
-            Texture2D textur = DownloadHandlerTexture.GetContent(www);
+            Texture2D texture = DownloadHandlerTexture.GetContent(www);
             Vector2 pivot = new Vector2(0.5f, 0.5f);
-            Sprite sprite = Sprite.Create(textur, new Rect(0.0f, 0.0f, textur.width, textur.height), pivot, 100.0f);
-            if (img) { img.sprite = sprite; }
+            Sprite sprite = Sprite.Create(texture, new Rect(0.0f, 0.0f, texture.width, texture.height), pivot, 100.0f);
+            if (img)
+            {
+                img.sprite = sprite;
+
+                // Update GetPhoto component sprite
+                if (img.gameObject.TryGetComponent<GetPhoto>(out var getPhoto))
+                {
+                    getPhoto.sprite = sprite;
+                }
+            }
         }
         else
         {
@@ -117,8 +151,26 @@ public class PhotoGallery : MonoBehaviour
         {
             unlockedPhotos.Add(photoName);
             PlayerPrefs.SetString("UnlockedPhoto_" + photoName, "true");
-        }
 
-        LoadImageGallery(); // Reload the gallery to apply changes
+            // Update existing instantiated image if it exists
+            if (instantiatedImages.ContainsKey(photoName))
+            {
+                GameObject imageObj = instantiatedImages[photoName];
+                Image img = imageObj.GetComponent<Image>();
+                GetPhoto getPhoto = imageObj.GetComponent<GetPhoto>();
+                LockOrUnlockImage(img, getPhoto, true);
+            }
+        }
+    }
+
+    void LoadUnlockedPhotos()
+    {
+        unlockedPhotos.Clear();
+
+        foreach (var key in PlayerPrefs.GetString("UnlockedPhoto_", "").Split(','))
+        {
+            if (!string.IsNullOrEmpty(key))
+                unlockedPhotos.Add(key);
+        }
     }
 }

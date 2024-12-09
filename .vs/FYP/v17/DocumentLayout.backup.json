@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Xin Hui\\FYP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|C:\\Users\\Xin Hui\\FYP\\assets\\scripts\\menu\\gamestartmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menu\\gamestartmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|c:\\users\\xin hui\\fyp\\assets\\scripts\\object relocate\\object relocate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\object relocate\\object relocate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|C:\\Users\\Xin Hui\\FYP\\assets\\scriptsvault-projektsumperk\\photogallery\\scripts\\photogallery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scriptsvault-projektsumperk\\photogallery\\scripts\\photogallery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|C:\\Users\\Xin Hui\\FYP\\assets\\scripts\\menu\\pausemenumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menu\\pausemenumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|C:\\Users\\Xin Hui\\FYP\\assets\\scripts\\menu\\gamestartmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menu\\gamestartmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|C:\\Users\\Xin Hui\\FYP\\assets\\scriptsvault-projektsumperk\\photogallery\\scripts\\getphoto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scriptsvault-projektsumperk\\photogallery\\scripts\\getphoto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|C:\\Users\\Xin Hui\\FYP\\assets\\scripts\\menu\\pausemenumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menu\\pausemenumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|C:\\Users\\Xin Hui\\FYP\\assets\\scripts\\openbook\\openbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\openbook\\openbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,8 +34,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Object Relocate.cs",
+              "DocumentMoniker": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Object Relocate\\Object Relocate.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Object Relocate\\Object Relocate.cs",
+              "ToolTip": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Object Relocate\\Object Relocate.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Object Relocate\\Object Relocate.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwBEAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T07:10:26.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OpenBook.cs",
+              "DocumentMoniker": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\OpenBook\\OpenBook.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\OpenBook\\OpenBook.cs",
+              "ToolTip": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\OpenBook\\OpenBook.cs",
+              "RelativeToolTip": "Assets\\Scripts\\OpenBook\\OpenBook.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAawC4AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T08:56:53.225Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -36,10 +69,9 @@
               "RelativeDocumentMoniker": "Assets\\ScriptsVault-ProjektSumperk\\PhotoGallery\\Scripts\\PhotoGallery.cs",
               "ToolTip": "C:\\Users\\Xin Hui\\FYP\\Assets\\ScriptsVault-ProjektSumperk\\PhotoGallery\\Scripts\\PhotoGallery.cs",
               "RelativeToolTip": "Assets\\ScriptsVault-ProjektSumperk\\PhotoGallery\\Scripts\\PhotoGallery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAgwGAAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T12:13:10.685Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-05T12:13:10.685Z"
             },
             {
               "$type": "Document",
@@ -49,36 +81,33 @@
               "RelativeDocumentMoniker": "Assets\\ScriptsVault-ProjektSumperk\\PhotoGallery\\Scripts\\GetPhoto.cs",
               "ToolTip": "C:\\Users\\Xin Hui\\FYP\\Assets\\ScriptsVault-ProjektSumperk\\PhotoGallery\\Scripts\\GetPhoto.cs",
               "RelativeToolTip": "Assets\\ScriptsVault-ProjektSumperk\\PhotoGallery\\Scripts\\GetPhoto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T12:13:00.73Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-05T12:13:00.73Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "PauseMenuManager.cs",
               "DocumentMoniker": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Menu\\PauseMenuManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Menu\\PauseMenuManager.cs",
               "ToolTip": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Menu\\PauseMenuManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Menu\\PauseMenuManager.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAowD0AAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAYwD0AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T10:08:30.349Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-05T10:08:30.349Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "GameStartMenu.cs",
               "DocumentMoniker": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Menu\\GameStartMenu.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Menu\\GameStartMenu.cs",
               "ToolTip": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Menu\\GameStartMenu.cs",
               "RelativeToolTip": "Assets\\Scripts\\Menu\\GameStartMenu.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAADUAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAAAAwEUAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T08:31:41.17Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T08:31:41.17Z"
             }
           ]
         }

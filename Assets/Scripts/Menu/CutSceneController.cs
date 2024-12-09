@@ -1,15 +1,14 @@
 
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
-using UnityEngine.XR;
 
 public class CutSceneController : MonoBehaviour
 {
     public PlayableDirector playableDirector;
     public FadeScreen fadeScreen;
     public bool endScene;
-    public Camera cutSceneCamera;
 
     private void OnEnable()
     {
@@ -19,8 +18,6 @@ public class CutSceneController : MonoBehaviour
 
     public void StartCutScene()
     {
-        // Disable head tracking
-        XRDevice.DisableAutoXRCameraTracking(cutSceneCamera, true);
         // Play the cutscene automatically when the scene starts
         if (playableDirector)
         {
@@ -35,7 +32,6 @@ public class CutSceneController : MonoBehaviour
 
     private void OnCutSceneEnded(PlayableDirector director)
     {
-        XRDevice.DisableAutoXRCameraTracking(cutSceneCamera, false);
         if (!endScene)
             // Go to GameScene 1
             SceneTransitionManager.singleton.GoToScene(SceneManager.GetActiveScene().buildIndex + 1);

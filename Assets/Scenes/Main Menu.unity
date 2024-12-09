@@ -903,6 +903,7 @@ MonoBehaviour:
     type: 3}
   parent: {fileID: 11267124}
   FullScreenPanel: {fileID: 629502135}
+  soundEffectsSource: {fileID: 1791952947}
   unlockedPhotos: []
 --- !u!4 &221201761
 Transform:
@@ -1477,7 +1478,7 @@ Transform:
   m_GameObject: {fileID: 394189813}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5438193, y: 0.95, z: 0.11937237}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3703,6 +3704,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 221201760}
+        m_TargetAssemblyTypeName: PhotoGallery, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1364063638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4571,7 +4584,7 @@ Transform:
   m_GameObject: {fileID: 1791952946}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.45, y: 0.96, z: 0.11937237}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
