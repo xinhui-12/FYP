@@ -5,6 +5,7 @@ public class UnlockDoor : MonoBehaviour
 {
     public SlidingPuzzle sliding16;
     public OpenDoor openDoor;
+    public PhotoGallery photoGallery;
 
     void Start()
     {
@@ -25,5 +26,6 @@ public class UnlockDoor : MonoBehaviour
     void UnlockDoorFunction()
     {
         openDoor.isLocked = false;
+        photoGallery.UnlockPhoto(photoGallery.customOrder[4]);
     }
 }

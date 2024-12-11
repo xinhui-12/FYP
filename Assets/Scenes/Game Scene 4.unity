@@ -2110,6 +2110,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9853fa297dbbaa24b96c3bfa75d5df4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &531043478 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9004769302760869201, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 531043476}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &531043479 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4420381696905401114, guid: 5c5aeaffc9e29ad4c9d7f8679e1899ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 531043476}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &577259523
 GameObject:
   m_ObjectHideFlags: 0
@@ -5577,6 +5589,65 @@ Transform:
   - {fileID: 412014657}
   m_Father: {fileID: 341679955}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1566737641
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1566737643}
+  - component: {fileID: 1566737642}
+  m_Layer: 0
+  m_Name: PhotoGallery
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1566737642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566737641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdf3d7a080a2e4afb8126c616899e3bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagePrefab: {fileID: 2679864517390695357, guid: c7f035846cbe8405985dac0e64781664,
+    type: 3}
+  parent: {fileID: 531043479}
+  FullScreenPanel: {fileID: 531043478}
+  soundEffectsSource: {fileID: 1794742262}
+  unlockedPhotos: []
+  customOrder:
+  - Hospital.png
+  - CertificateWall.png
+  - StudyRoom.png
+  - Bedtime.png
+  - SlidingPuzzle.png
+  - MessyBoard.png
+  - Toilet.png
+  - GreatWords.png
+--- !u!4 &1566737643
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566737641}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1624548054 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 814415271694848051, guid: 7d09c64c10ed9954c8c5f262a0a2e5fe,
@@ -5651,6 +5722,11 @@ PrefabInstance:
       propertyPath: keypadCombo
       value: 1225
       objectReference: {fileID: 0}
+    - target: {fileID: 2303921294396319334, guid: 2cf8072ebed1149479d25d30c324125c,
+        type: 3}
+      propertyPath: photoGallery
+      value: 
+      objectReference: {fileID: 1566737642}
     - target: {fileID: 2303921294396319334, guid: 2cf8072ebed1149479d25d30c324125c,
         type: 3}
       propertyPath: openDoorScript
@@ -9390,3 +9466,4 @@ SceneRoots:
   - {fileID: 215186549}
   - {fileID: 1794742263}
   - {fileID: 341679955}
+  - {fileID: 1566737643}

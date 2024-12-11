@@ -9,6 +9,8 @@ public class LightSwitchInteractable : MonoBehaviour
     public Light lightToOpen;
     public AnimationCurve lightIntensityCurve;
     public TMP_Text notepad;
+    public PhotoGallery photoGallery;
+    private bool firstTimeOpen = true;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -17,6 +19,8 @@ public class LightSwitchInteractable : MonoBehaviour
             bool isSwitchOpen = !lightSwitchAnimation.GetBool("SwitchOpen");
             lightSwitchAnimation.SetBool("SwitchOpen", isSwitchOpen);
             StartCoroutine(ControlLightSwitch(isSwitchOpen));
+            if (firstTimeOpen && isSwitchOpen)
+                photoGallery.UnlockPhoto(photoGallery.customOrder[3]);
         }
     }
 

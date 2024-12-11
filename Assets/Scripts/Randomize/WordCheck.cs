@@ -7,11 +7,13 @@ public class WordCheck : MonoBehaviour
 {
     public int word;
     public RulerSlash rulerSlash;
+    public PhotoGallery photoGallery;
 
     void Update()
     {
         if(rulerSlash.slashTime == word)
         {
+            photoGallery.UnlockPhoto(photoGallery.customOrder[5]);
             StartCoroutine(GoScene());
         }
     }

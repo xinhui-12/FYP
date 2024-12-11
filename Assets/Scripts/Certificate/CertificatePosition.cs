@@ -7,6 +7,7 @@ public class CertificatePosition : MonoBehaviour
     public RectTransform[] objects;
     public RectTransform[] snapPoints;
     public Dictionary<RectTransform, RectTransform> snapPointOccupancy = new();
+    public PhotoGallery photoGallery;
 
     void Start()
     {
@@ -57,5 +58,17 @@ public class CertificatePosition : MonoBehaviour
             Debug.Log($"Snap point {entry.Key.name} initially occupied by {(entry.Value != null ? entry.Value.name : "None")}");
         }
         */
+    }
+
+    public bool CheckCorrectPosition()
+    {
+        for (int i = 0; i < objects.Length; i++)
+        {
+            if (objects[i].position != snapPoints[i].position)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }

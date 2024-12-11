@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour
 
     [Header("UI Pages")]
     public GameObject gameMenu;
-    public GameObject pauseMenuUI;
+    public GameObject pauseMenu;
     public GameObject albumMenu;
     public GameObject settingMenu;
     public GameObject warningOfExit;
@@ -100,7 +100,7 @@ public class PauseMenu : MonoBehaviour
     public void BackToPauseMenu()
     {
         HideAll();
-        pauseMenuUI.SetActive(true);
+        pauseMenu.SetActive(true);
     }
 
     public void DisplayPauseMenuUI()
@@ -109,7 +109,7 @@ public class PauseMenu : MonoBehaviour
         {
             pause = false;
             HideAll();
-            pauseMenuUI.SetActive(false);
+            pauseMenu.SetActive(false);
             activePauseMenuUI = false;
             Time.timeScale = 1.0f;
 
@@ -125,7 +125,7 @@ public class PauseMenu : MonoBehaviour
 
             pause = true;
             HideAll();
-            pauseMenuUI.SetActive(true);
+            pauseMenu.SetActive(true);
             activePauseMenuUI = true;
             Time.timeScale = 0;
         }
@@ -159,7 +159,7 @@ public class PauseMenu : MonoBehaviour
 
     public void HideAll()
     {
-        pauseMenuUI.SetActive(false);
+        pauseMenu.SetActive(false);
         albumMenu.SetActive(false);
         settingMenu.SetActive(false);
         warningOfExit.SetActive(false);

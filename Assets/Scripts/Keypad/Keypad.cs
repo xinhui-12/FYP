@@ -26,7 +26,7 @@ public class Keypad : MonoBehaviour
     [Range(0, 5)]
     [SerializeField] private float screenIntensity = 2.5f;
     [Header("Colors")]
-    [SerializeField] private Color screenNormalColor = new Color(0.98f, 0.50f, 0.032f, 1f); //orangy
+    [SerializeField] private Color screenNormalColor = new Color(0.98f, 0.50f, 0.032f, 1f); //orange
     [SerializeField] private Color screenDeniedColor = new Color(1f, 0f, 0f, 1f); //red
     [SerializeField] private Color screenGrantedColor = new Color(0f, 0.62f, 0.07f); //greenish
     [Header("SoundFx")]
@@ -38,10 +38,11 @@ public class Keypad : MonoBehaviour
     [SerializeField] private TMP_Text keypadDisplayText;
     [SerializeField] private AudioSource audioSource;
 
-
     private string currentInput;
     private bool displayingResult = false;
     private bool accessWasGranted = false;
+
+    public PhotoGallery photoGallery;
 
     private void Awake()
     {
@@ -123,6 +124,7 @@ public class Keypad : MonoBehaviour
         onAccessGranted?.Invoke();
         panelMesh.material.SetVector("_EmissionColor", screenGrantedColor * screenIntensity);
         audioSource.PlayOneShot(accessGrantedSfx);
+        photoGallery.UnlockPhoto(photoGallery.customOrder[6]);
     }
 
 }

@@ -9,12 +9,14 @@ public class GameStartMenu : MonoBehaviour
     public GameObject mainMenu;
     public GameObject albumMenu;
     public GameObject settingMenu;
+    public GameObject instruction;
 
     [Header("Main Menu Buttons")]
     public Button startButton;
     public Button albumButton;
     public Button settingButton;
     public Button exitButton;
+    public Button instructionButton;
 
     [Header("Album Menu Buttons")]
     public Button albumBackButton;
@@ -29,6 +31,9 @@ public class GameStartMenu : MonoBehaviour
     public AudioSource musicSource;
     public List<Light> environmentLights;
 
+    [Header("Instruction")]
+    public Button instructionBackButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +42,7 @@ public class GameStartMenu : MonoBehaviour
         albumButton.onClick.AddListener(() => { PlayClickSound(); ShowAlbumMenu(); });
         settingButton.onClick.AddListener(() => { PlayClickSound(); ShowSettingMenu(); });
         exitButton.onClick.AddListener(() => { PlayClickSound(); QuitGame(); });
+        instructionButton.onClick.AddListener(() => { PlayClickSound(); ShowInstruction(); });
 
         // Hook up album menu buttons
         albumBackButton.onClick.AddListener(() => { PlayClickSound(); EnableMainMenu(); });
@@ -61,6 +67,9 @@ public class GameStartMenu : MonoBehaviour
         soundEffectsSlider.onValueChanged.AddListener(OnSoundEffectsSliderChanged);
         musicSlider.onValueChanged.AddListener(OnMusicSliderChanged);
         brightnessSlider.onValueChanged.AddListener(OnBrightnessSliderChanged);
+
+        // Hook up instruction buttons
+        instructionBackButton.onClick.AddListener(() => { PlayClickSound(); EnableMainMenu(); });
 
         EnableMainMenu();
     }
@@ -96,11 +105,19 @@ public class GameStartMenu : MonoBehaviour
         settingMenu.SetActive(true);
     }
 
+
+    public void ShowInstruction()
+    {
+        HideAll();
+        instruction.SetActive(true);
+    }
+
     public void HideAll()
     {
         mainMenu.SetActive(false);
         albumMenu.SetActive(false);
         settingMenu.SetActive(false);
+        instruction.SetActive(false);
     }
 
     public void EnableMainMenu()

@@ -8,6 +8,7 @@ public class BallManager : MonoBehaviour
     [Tooltip("List of object-socket pairs.")]
     public List<SocketObjectPair> socketObjectPairs;
     private Dictionary<GameObject, GameObject> objectToSocketMap;
+    public PhotoGallery photoGallery;
 
     private void Awake()
     {
@@ -42,6 +43,7 @@ public class BallManager : MonoBehaviour
         {
             Debug.Log("All pairs are correct!");
             openDoor.isLocked = false;
+            photoGallery.UnlockPhoto(photoGallery.customOrder[7]);
         }
     }
 
