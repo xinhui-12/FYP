@@ -1,37 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Xin Hui\\FYP\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|c:\\users\\xin hui\\fyp\\assets\\scripts\\menu\\unlockhospitalalbum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menu\\unlockhospitalalbum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UnlockHospitalAlbum.cs",
-              "DocumentMoniker": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Menu\\UnlockHospitalAlbum.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Menu\\UnlockHospitalAlbum.cs",
-              "ToolTip": "C:\\Users\\Xin Hui\\FYP\\Assets\\Scripts\\Menu\\UnlockHospitalAlbum.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Menu\\UnlockHospitalAlbum.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T04:34:25.852Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }
