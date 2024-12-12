@@ -16,12 +16,14 @@ public class PauseMenu : MonoBehaviour
     public GameObject albumMenu;
     public GameObject settingMenu;
     public GameObject warningOfExit;
+    public GameObject instruction;
 
     [Header("Pause Menu Buttons")]
     public Button resumeButton;
     public Button albumButton;
     public Button settingButton;
     public Button exitButton;
+    public Button instructionButton;
 
     [Header("Album Menu Buttons")]
     public Button albumBackButton;
@@ -44,6 +46,9 @@ public class PauseMenu : MonoBehaviour
     public Button confirmButton;
     public Button cancelButton;
 
+    [Header("Instruction")]
+    public Button instructionBackButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +57,7 @@ public class PauseMenu : MonoBehaviour
         albumButton.onClick.AddListener(() => { PlayClickSound(); ShowAlbumMenu(); });
         settingButton.onClick.AddListener(() => { PlayClickSound(); ShowSettingMenu(); });
         exitButton.onClick.AddListener(() => { PlayClickSound(); ShowWarningDialog(); });
+        instructionButton.onClick.AddListener(() => { PlayClickSound(); ShowInstruction(); });
 
         // Hook up album menu buttons
         albumBackButton.onClick.AddListener(() => { PlayClickSound(); BackToPauseMenu(); });
@@ -86,6 +92,9 @@ public class PauseMenu : MonoBehaviour
 
         confirmButton.onClick.AddListener(() => { PlayClickSound(); ExitGame(); });
         cancelButton.onClick.AddListener(() => { PlayClickSound(); BackToPauseMenu(); });
+
+        // Hook up instruction buttons
+        instructionBackButton.onClick.AddListener(() => { PlayClickSound(); BackToPauseMenu(); });
 
         HideAll();
         DisplayPauseMenuUI();
@@ -157,12 +166,18 @@ public class PauseMenu : MonoBehaviour
         warningOfExit.SetActive(true);
     }
 
+    public void ShowInstruction()
+    {
+        HideAll();
+        instruction.SetActive(true);
+    }
     public void HideAll()
     {
         pauseMenu.SetActive(false);
         albumMenu.SetActive(false);
         settingMenu.SetActive(false);
         warningOfExit.SetActive(false);
+        instruction.SetActive(false);
     }
 
 
