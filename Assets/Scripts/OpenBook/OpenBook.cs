@@ -65,7 +65,7 @@ public class OpenBook : MonoBehaviour
 
         while (Vector3.Distance(transform.position, targetPosition.position) > 0.1f)
         {
-            transform.SetPositionAndRotation(Vector3.MoveTowards(transform.position, targetPosition.position, moveSpeed * Time.deltaTime), Quaternion.RotateTowards(transform.rotation, targetPosition.rotation, moveSpeed * 50f * Time.deltaTime));
+            transform.SetPositionAndRotation(Vector3.MoveTowards(transform.position, targetPosition.position, moveSpeed * Time.deltaTime), Quaternion.Slerp(transform.rotation, targetPosition.rotation, moveSpeed * Time.deltaTime));
             yield return null;
         }
 
@@ -94,7 +94,7 @@ public class OpenBook : MonoBehaviour
             if (stateInfo.IsName("OpenBook") && stateInfo.normalizedTime >= 1.0f)
                 break;
 
-            yield return null; // Wait for the animation to complete
+            yield return null;
         }
 
         bookCanva?.SetActive(true);

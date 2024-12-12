@@ -8406,7 +8406,7 @@ MonoBehaviour:
   BookPanel: {fileID: 4276130807400775871}
   background: {fileID: 21300000, guid: 3c47abcf3fb3d12408efe3073b2e379f, type: 3}
   bookPages:
-  - {fileID: 21300000, guid: e61e0fa43c6df844c9dc2202a628e962, type: 3}
+  - {fileID: 21300000, guid: 8786c446e9a0d1847a56ab8e899cdbdf, type: 3}
   - {fileID: 21300000, guid: faf4a260f79746c46bfc578700ed0b9b, type: 3}
   - {fileID: 21300000, guid: 330a8e5ba89830f41b993c4c738f2611, type: 3}
   - {fileID: 21300000, guid: 297f87a372c519f4585550b6b57520e4, type: 3}
@@ -8471,7 +8471,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e61e0fa43c6df844c9dc2202a628e962, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8786c446e9a0d1847a56ab8e899cdbdf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8610,7 +8610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8784314, g: 0.8784314, b: 0.8784314, a: 1}
+  m_Color: {r: 0.81960785, g: 0.53333336, b: 0.53333336, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8713,7 +8713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8784314, g: 0.8784314, b: 0.8784314, a: 1}
+  m_Color: {r: 0.81960785, g: 0.53333336, b: 0.53333336, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8923,17 +8923,17 @@ PrefabInstance:
     - target: {fileID: 1593529156830139025, guid: 7d09c64c10ed9954c8c5f262a0a2e5fe,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.317
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: 1593529156830139025, guid: 7d09c64c10ed9954c8c5f262a0a2e5fe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.83
+      value: 0.624
       objectReference: {fileID: 0}
     - target: {fileID: 1593529156830139025, guid: 7d09c64c10ed9954c8c5f262a0a2e5fe,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.034
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 1593529156830139025, guid: 7d09c64c10ed9954c8c5f262a0a2e5fe,
         type: 3}
