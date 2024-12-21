@@ -69,6 +69,7 @@ public class CertificatePosition : MonoBehaviour
                 return false;
             }
         }
+        photoGallery.UnlockPhoto(photoGallery.photoSprites[1].name);
         return true;
     }
 }

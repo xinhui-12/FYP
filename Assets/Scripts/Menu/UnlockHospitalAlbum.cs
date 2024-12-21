@@ -8,7 +8,7 @@ public class UnlockHospitalAlbum : MonoBehaviour
 
     void Start()
     {
-        photoGallery.UnlockPhoto(photoGallery.customOrder[0]);
+        photoGallery.UnlockPhoto(photoGallery.photoSprites[0].name);
         sonStruggleSound.Play();
     }
 }

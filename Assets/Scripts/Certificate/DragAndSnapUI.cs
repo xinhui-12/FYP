@@ -58,10 +58,7 @@ public class DragAndSnapUI : XRGrabInteractable
         {
             transform.position = nearestSnapPoint.position;
             certificateScript.snapPointOccupancy[nearestSnapPoint] = (RectTransform)transform;
-            if (certificateScript.CheckCorrectPosition())
-            {
-                certificateScript.photoGallery.UnlockPhoto(certificateScript.photoGallery.customOrder[1]);
-            }
+            certificateScript.CheckCorrectPosition();
         }
 
         if(transform.localPosition.z > 0)

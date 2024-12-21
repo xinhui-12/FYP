@@ -13,7 +13,7 @@ public class WordCheck : MonoBehaviour
     {
         if(rulerSlash.slashTime == word)
         {
-            photoGallery.UnlockPhoto(photoGallery.customOrder[5]);
+            photoGallery.UnlockPhoto(photoGallery.photoSprites[5].name);
             StartCoroutine(GoScene());
         }
     }

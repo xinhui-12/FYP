@@ -8,7 +8,6 @@ using UnityEngine.UI;
 
 public class PhotoGallery : MonoBehaviour
 {
-    string path;
     public GameObject imagePrefab;
     public Transform parent;
     public GameObject FullScreenPanel;
@@ -20,12 +19,11 @@ public class PhotoGallery : MonoBehaviour
     // Dictionary to track instantiated images
     private Dictionary<string, GameObject> instantiatedImages = new();
 
-    // Define custom order
-    public List<string> customOrder = new();
+    // Define the all the image in gallery
+    public List<Sprite> photoSprites = new();
 
     void Start()
     {
-        path = Application.dataPath + "/2D images/Album";
         LoadUnlockedPhotos();
         LoadImageGallery();
     }
@@ -47,47 +45,41 @@ public class PhotoGallery : MonoBehaviour
 
     void LoadImageGallery()
     {
-        if (Directory.Exists(path))
+        // Ensure the sprites list is not empty
+        if (photoSprites == null || photoSprites.Count == 0)
         {
-            foreach (string fileName in customOrder)
-            {
-                string filePath = Path.Combine(path, fileName);
-
-                // Check if the file exists in the directory
-                if (File.Exists(filePath))
-                {
-                    // Skip already instantiated images
-                    if (instantiatedImages.ContainsKey(fileName))
-                        continue;
-
-                    GameObject images = Instantiate(imagePrefab, parent);
-                    images.name = fileName;
-                    string fileURL = "file:///" + filePath;
-
-                    Image imageComponent = images.GetComponent<Image>();
-                    StartCoroutine(LoadImage(fileURL, imageComponent, fileName));
-
-                    // Add the GetPhoto component and set it up
-                    GetPhoto getPhoto = images.GetComponent<GetPhoto>();
-                    getPhoto.photoGallery = this;
-
-                    // Lock or unlock the photo based on its status
-                    bool isUnlocked = unlockedPhotos.Contains(fileName);
-                    LockOrUnlockImage(imageComponent, getPhoto, isUnlocked);
-
-                    // Add to instantiated images dictionary
-                    instantiatedImages[fileName] = images;
-                }
-                else
-                {
-                    Debug.LogWarning($"File {fileName} not found in directory.");
-                }
-            }
-        }
-        else
-        {
-            Directory.CreateDirectory(path);
+            Debug.LogError("No photo sprites are assigned to the gallery!");
             return;
+        }
+
+        for (int i = 0; i < photoSprites.Count; i++)
+        {
+            Sprite sprite = photoSprites[i];
+            string photoName = sprite.name; // Use sprite's name as an identifier
+
+            // Skip already instantiated images
+            if (instantiatedImages.ContainsKey(photoName))
+                continue;
+
+            // Instantiate the image prefab
+            GameObject images = Instantiate(imagePrefab, parent);
+            images.name = photoName;
+
+            // Set the sprite directly
+            Image imageComponent = images.GetComponent<Image>();
+            imageComponent.sprite = sprite;
+
+            // Add the GetPhoto component and set it up
+            GetPhoto getPhoto = images.GetComponent<GetPhoto>();
+            getPhoto.photoGallery = this;
+            getPhoto.sprite = sprite;
+
+            // Lock or unlock the photo based on its status
+            bool isUnlocked = unlockedPhotos.Contains(photoName);
+            LockOrUnlockImage(imageComponent, getPhoto, isUnlocked);
+
+            // Add to instantiated images dictionary
+            instantiatedImages[photoName] = images;
         }
     }
 
@@ -98,68 +90,15 @@ public class PhotoGallery : MonoBehaviour
 
         if (isUnlocked)
         {
-            // Normal color
             img.color = Color.white;
-            
-            // Enable click functionality
             getPhoto.gameObject.GetComponent<Button>().enabled = true;
-
-            // Hide the lock icon
             lockIcon?.SetActive(false);
         }
         else
         {
-            // Grayscale color
             img.color = new Color(0.2f, 0.2f, 0.2f);
-
-            // Disable click functionality
             getPhoto.gameObject.GetComponent<Button>().enabled = false;
-
             lockIcon?.SetActive(true);
-        }
-    }
-
-    IEnumerator LoadImage(string url, Image img, string imageName)
-    {
-        string extension = Path.GetExtension(url).ToLower();
-
-        UnityWebRequest www;
-
-        if (extension == ".png")
-        {
-            www = UnityWebRequestTexture.GetTexture(url);
-        }
-        else if (extension == ".jpg" || extension == ".jpeg")
-        {
-            www = UnityWebRequestTexture.GetTexture(url, true);
-        }
-        else
-        {
-            Debug.LogError("Unsupported image format: " + extension);
-            yield break;
-        }
-
-        yield return www.SendWebRequest();
-
-        if (www.result == UnityWebRequest.Result.Success)
-        {
-            Texture2D texture = DownloadHandlerTexture.GetContent(www);
-            Vector2 pivot = new Vector2(0.5f, 0.5f);
-            Sprite sprite = Sprite.Create(texture, new Rect(0.0f, 0.0f, texture.width, texture.height), pivot, 100.0f);
-            if (img)
-            {
-                img.sprite = sprite;
-
-                // Update GetPhoto component sprite
-                if (img.gameObject.TryGetComponent<GetPhoto>(out var getPhoto))
-                {
-                    getPhoto.sprite = sprite;
-                }
-            }
-        }
-        else
-        {
-            Debug.LogError("Error loading image: " + www.error);
         }
     }
 

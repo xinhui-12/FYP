@@ -13,7 +13,7 @@ public class CheatArrange : MonoBehaviour
                 certificatePosition.objects[i].position = certificatePosition.snapPoints[i].position;
                 certificatePosition.snapPointOccupancy[certificatePosition.snapPoints[i]] = certificatePosition.objects[i];
             }
-            certificatePosition.photoGallery.UnlockPhoto(certificatePosition.photoGallery.customOrder[1]);
+            certificatePosition.CheckCorrectPosition();
         }
     }
 }

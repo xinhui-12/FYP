@@ -9,6 +9,7 @@ public class UIObjectInteraction : MonoBehaviour
     private Vector3 lastInteractionPosition;
     public GameObject number;
     public FadeScreen fadeScreen;
+    public AudioSource soundEffect;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class UIObjectInteraction : MonoBehaviour
             fadeScreen.FadeIn();
             lastInteractionPosition = player.transform.position;
             player.transform.position = maze.startPosition;
+            soundEffect.Play();
         }
             
     }

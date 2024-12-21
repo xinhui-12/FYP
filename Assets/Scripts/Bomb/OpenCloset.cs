@@ -6,6 +6,7 @@ public class OpenCloset : XRGrabInteractable
 {
     public Vector3 targetRotation;
     public float rotationSpeed = 2.0f;
+    public AudioSource doorOpenSound;
     [HideInInspector]
     public bool isOpen = false;
     private Quaternion finalRotation;
@@ -18,6 +19,7 @@ public class OpenCloset : XRGrabInteractable
         finalRotation = Quaternion.Euler(targetRotation);
         isRotating = true;
         isOpen = true;
+        doorOpenSound.Play();
     }
 
     protected override void OnSelectExited(SelectExitEventArgs args)

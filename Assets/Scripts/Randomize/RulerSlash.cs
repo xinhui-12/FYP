@@ -5,6 +5,7 @@ using TMPro;
 
 public class RulerSlash : MonoBehaviour
 {
+    // The word animation after being slash
     public Vector3 targetPosition;
     public float moveSpeed = 1f;
     public float dissolveDuration = 1f;

@@ -43,7 +43,7 @@ public class BallManager : MonoBehaviour
         {
             Debug.Log("All pairs are correct!");
             openDoor.isLocked = false;
-            photoGallery.UnlockPhoto(photoGallery.customOrder[7]);
+            photoGallery.UnlockPhoto(photoGallery.photoSprites[7].name);
         }
     }
 

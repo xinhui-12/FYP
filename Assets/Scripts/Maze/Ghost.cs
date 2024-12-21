@@ -47,6 +47,10 @@ public class Ghost : MonoBehaviour
     public FadeScreen fadeScreen;
     public Transform playerCamera;
 
+    private float stuckTimeout = 5f;
+    private float stuckTimeElapsed = 0f;
+    private Vector3 lastPosition;
+
     private void Start()
     {
         Anim = GetComponent<Animator>();
@@ -65,6 +69,25 @@ public class Ghost : MonoBehaviour
             StopGhost();
             return;
         }
+        // Check for movement
+        if (Vector3.Distance(transform.position, lastPosition) < 0.01f)
+        {
+            stuckTimeElapsed += Time.deltaTime;
+            if (stuckTimeElapsed > stuckTimeout)
+            {
+                Debug.Log("Ghost is stuck, returning to patrol!");
+                currentState = GhostState.Returning;
+                agent.speed = patrolSpeed;
+                stuckTimeElapsed = 0f;
+            }
+        }
+        else
+        {
+            stuckTimeElapsed = 0f;
+        }
+
+        lastPosition = transform.position;
+
         switch (currentState)
         {
             case GhostState.Patrolling:
@@ -113,8 +136,19 @@ public class Ghost : MonoBehaviour
         Anim.CrossFade(MoveState, 0.1f, 0, 0);
         if (!isLookingAround)
         {
-            // Set NavMeshAgent destination to the player's last known position
-            agent.SetDestination(targetedPlayerPosition);
+            // Validate the path before setting the destination
+            NavMeshPath path = new();
+            if(agent.CalculatePath(targetedPlayerPosition, path) && path.status == NavMeshPathStatus.PathComplete)
+            {
+                // Set NavMeshAgent destination to the player's last known position
+                agent.SetDestination(targetedPlayerPosition);
+            }
+            else
+            {
+                currentState = GhostState.Returning;
+                agent.speed = patrolSpeed;
+                return;
+            }
 
             // Check if has reached the last known position
             if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
@@ -145,6 +179,17 @@ public class Ghost : MonoBehaviour
         {
             TriggerAttack();
         }
+    }
+
+    private Vector3 GetClosestNavMeshPosition(Vector3 targetPosition)
+    {
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(targetPosition, out hit, 2.0f, NavMesh.AllAreas))
+        {
+            Vector3 offset = (transform.position - hit.position).normalized * 0.5f; // Offset by 0.5 units
+            return hit.position + offset;
+        }
+        return transform.position; // Fallback to the current position
     }
 
     private void LookAround()
@@ -214,7 +259,7 @@ public class Ghost : MonoBehaviour
     public void BackToStartPoint()
     {
         fadeScreen.FadeIn();
-        player.position = new Vector3(maze.startPosition.x, maze.startPosition.y + 1, maze.startPosition.z);
+        player.position = new Vector3(maze.startPosition.x, maze.startPosition.y + 2, maze.startPosition.z);
         agent.isStopped = false;
         transform.position = patrolStart.position;
         currentState = GhostState.Patrolling;
@@ -256,7 +301,7 @@ public class Ghost : MonoBehaviour
         {
             if (hit.collider.gameObject == player.gameObject)
             {
-                targetedPlayerPosition = player.position;
+                targetedPlayerPosition = GetClosestNavMeshPosition(player.position);
                 return true;
             }
         }

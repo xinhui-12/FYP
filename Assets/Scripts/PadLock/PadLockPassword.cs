@@ -23,7 +23,7 @@ public class PadLockPassword : MonoBehaviour
         if (moveRull.numberArray.SequenceEqual(numberPassword))
         {
             padlockAnimator.SetBool("Locked", false);
-            photoGallery.UnlockPhoto(photoGallery.customOrder[2]);
+            photoGallery.UnlockPhoto(photoGallery.photoSprites[2].name);
             StartCoroutine(PadlockDisappear());
         }
     }
@@ -37,7 +37,7 @@ public class PadLockPassword : MonoBehaviour
         }
 
         // Wait until the "Opened" animation has fully completed
-        while (padlockAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
+        while (padlockAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.9f)
         {
             yield return null;
         }

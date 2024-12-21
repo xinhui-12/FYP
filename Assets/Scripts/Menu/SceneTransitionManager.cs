@@ -11,7 +11,7 @@ public class SceneTransitionManager : MonoBehaviour
     private void Awake()
     {
         if (singleton && singleton != this)
-            Destroy(singleton);
+            //Destroy(singleton);
 
         singleton = this;
     }

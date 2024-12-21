@@ -11,6 +11,7 @@ public class BombDifuseLogic : MonoBehaviour
     public TMP_Text[] stageHint = new TMP_Text[3];
     public TMP_Text bombDefuseDisplay;
     public CountdownTimer countdownTimer;
+    public AudioSource correctAudio;
     public AudioSource explosionAudio;
     public AudioSource parentScoldAudio;
     public FadeScreen fadeScreen;
@@ -90,7 +91,7 @@ public class BombDifuseLogic : MonoBehaviour
 
     private void HandleColliderTrigger(Collider collider)
     {
-        Debug.Log($"Collider Triggered: {collider.name}");
+        correctAudio.Play();
 
         if (collider.gameObject.name == "Selection1Collider")
         {

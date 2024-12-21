@@ -26,6 +26,6 @@ public class UnlockDoor : MonoBehaviour
     void UnlockDoorFunction()
     {
         openDoor.isLocked = false;
-        photoGallery.UnlockPhoto(photoGallery.customOrder[4]);
+        photoGallery.UnlockPhoto(photoGallery.photoSprites[4].name);
     }
 }

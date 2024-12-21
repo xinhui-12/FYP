@@ -20,7 +20,7 @@ public class LightSwitchInteractable : MonoBehaviour
             lightSwitchAnimation.SetBool("SwitchOpen", isSwitchOpen);
             StartCoroutine(ControlLightSwitch(isSwitchOpen));
             if (firstTimeOpen && isSwitchOpen)
-                photoGallery.UnlockPhoto(photoGallery.customOrder[3]);
+                photoGallery.UnlockPhoto(photoGallery.photoSprites[3].name);
         }
     }
 
