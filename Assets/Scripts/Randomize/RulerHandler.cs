@@ -28,13 +28,13 @@ public class RulerHandler : XRGrabInteractable
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
         base.OnSelectEntered(args);
-        transform.SetParent(tableTransform.parent);
         selected = true;
     }
 
     protected override void OnSelectExited(SelectExitEventArgs args)
     {
         base.OnSelectExited(args);
+        transform.SetParent(tableTransform.parent);
         selected = false;
     }
 

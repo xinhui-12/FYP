@@ -5,6 +5,7 @@ using TMPro;
 
 public class RulerSlash : MonoBehaviour
 {
+    public AudioSource rulerAudio;
     // The word animation after being slash
     public Vector3 targetPosition;
     public float moveSpeed = 1f;
@@ -18,6 +19,7 @@ public class RulerSlash : MonoBehaviour
         if (isOtherInTrigger) return;
         if (other.CompareTag("Word"))
         {
+            rulerAudio.Play();
             isOtherInTrigger = true;
             other.gameObject.GetComponentInParent<WordJitter>().isTrigger = true;
             StartCoroutine(SlashWord(other.gameObject));
